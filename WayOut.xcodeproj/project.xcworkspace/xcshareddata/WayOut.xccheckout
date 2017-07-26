@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D66DEC6C-997B-42F1-A02F-5239C3FDCA48</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WayOut</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C4F335284400C5DFCE72D6B741DF68153ACAC162</key>
+		<string>https://github.com/NyanSatan/iOS6Switch.git</string>
+		<key>F604CBC12AC37670942B750019FA1BA2D6CB91E8</key>
+		<string>github.com:NyanSatan/WayOut.git</string>
+		<key>FD44FFD1078576713193740522ABA2A922E64505</key>
+		<string>github.com:NyanSatan/iOS6AlertView.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WayOut.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C4F335284400C5DFCE72D6B741DF68153ACAC162</key>
+		<string>../../../iOS6Switch</string>
+		<key>F604CBC12AC37670942B750019FA1BA2D6CB91E8</key>
+		<string>../..</string>
+		<key>FD44FFD1078576713193740522ABA2A922E64505</key>
+		<string>../../../iOS6AlertView</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:NyanSatan/WayOut.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F604CBC12AC37670942B750019FA1BA2D6CB91E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD44FFD1078576713193740522ABA2A922E64505</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS6AlertView</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C4F335284400C5DFCE72D6B741DF68153ACAC162</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS6Switch</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F604CBC12AC37670942B750019FA1BA2D6CB91E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WayOut</string>
+		</dict>
+	</array>
+</dict>
+</plist>
