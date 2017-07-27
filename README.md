@@ -2,6 +2,8 @@
 GUI for kloader/multi_kloader in the spirit of old classic iOS Setup assistant (Setup.app) for dualboots to iOS 6 and older (nothing will prevent booting older or newer iOS versions though)
 
 # Dependencies
+Now included by default, no need to do that anymore
+
 `cd .../WayOut-master`
 
 `mkdir Dependencies`
