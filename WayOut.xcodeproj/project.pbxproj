@@ -64,6 +64,26 @@
 		305EFC841F28F40400879872 /* kloader in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC811F28F40400879872 /* kloader */; };
 		305EFC851F28F40400879872 /* multi_kloader in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC821F28F40400879872 /* multi_kloader */; };
 		305EFC861F28F40400879872 /* runasroot in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC831F28F40400879872 /* runasroot */; };
+		307D8BE41F29B9CA004EACF4 /* iOS6AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307D8BD91F29B9CA004EACF4 /* iOS6AlertView.m */; };
+		307D8BE51F29B9CA004EACF4 /* UIAlertViewDimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDA1F29B9CA004EACF4 /* UIAlertViewDimming.png */; };
+		307D8BE61F29B9CA004EACF4 /* UIAlertViewDimming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDB1F29B9CA004EACF4 /* UIAlertViewDimming@2x.png */; };
+		307D8BE71F29B9CA004EACF4 /* UIPopupAlertBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDC1F29B9CA004EACF4 /* UIPopupAlertBackground.png */; };
+		307D8BE81F29B9CA004EACF4 /* UIPopupAlertBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDD1F29B9CA004EACF4 /* UIPopupAlertBackground@2x.png */; };
+		307D8BE91F29B9CA004EACF4 /* UIPopupAlertSheetButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDE1F29B9CA004EACF4 /* UIPopupAlertSheetButton.png */; };
+		307D8BEA1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDF1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png */; };
+		307D8BEB1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BE01F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png */; };
+		307D8BEC1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BE11F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png */; };
+		307D8BED1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BE21F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png */; };
+		307D8BEE1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BE31F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png */; };
+		307D8BF91F29B9DE004EACF4 /* iOS6Switch.m in Sources */ = {isa = PBXBuildFile; fileRef = 307D8BF01F29B9DE004EACF4 /* iOS6Switch.m */; };
+		307D8BFA1F29B9DE004EACF4 /* UISwitchShapeMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF11F29B9DE004EACF4 /* UISwitchShapeMask.png */; };
+		307D8BFB1F29B9DE004EACF4 /* UISwitchShapeMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF21F29B9DE004EACF4 /* UISwitchShapeMask@2x.png */; };
+		307D8BFC1F29B9DE004EACF4 /* UISwitchShapeShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF31F29B9DE004EACF4 /* UISwitchShapeShadow.png */; };
+		307D8BFD1F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF41F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png */; };
+		307D8BFE1F29B9DE004EACF4 /* UISwitchThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF51F29B9DE004EACF4 /* UISwitchThumb.png */; };
+		307D8BFF1F29B9DE004EACF4 /* UISwitchThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF61F29B9DE004EACF4 /* UISwitchThumb@2x.png */; };
+		307D8C001F29B9DE004EACF4 /* UISwitchThumbPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF71F29B9DE004EACF4 /* UISwitchThumbPressed.png */; };
+		307D8C011F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF81F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png */; };
 		30CFE4E21EC1B3CA00882B6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CFE4E11EC1B3CA00882B6F /* ViewController.m */; };
 		30E1E1D51EBB3AB8004079AE /* LinenSettings@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E1E1D31EBB3AB8004079AE /* LinenSettings@2x~ipad.png */; };
 		30E1E1D61EBB3AB8004079AE /* LinenSettings~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 30E1E1D41EBB3AB8004079AE /* LinenSettings~ipad.png */; };
@@ -134,6 +154,28 @@
 		305EFC811F28F40400879872 /* kloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kloader; sourceTree = "<group>"; };
 		305EFC821F28F40400879872 /* multi_kloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = multi_kloader; sourceTree = "<group>"; };
 		305EFC831F28F40400879872 /* runasroot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = runasroot; sourceTree = "<group>"; };
+		307D8BD81F29B9CA004EACF4 /* iOS6AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6AlertView.h; path = iOS6AlertViewLib/iOS6AlertView.h; sourceTree = "<group>"; };
+		307D8BD91F29B9CA004EACF4 /* iOS6AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6AlertView.m; path = iOS6AlertViewLib/iOS6AlertView.m; sourceTree = "<group>"; };
+		307D8BDA1F29B9CA004EACF4 /* UIAlertViewDimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIAlertViewDimming.png; path = iOS6AlertViewLib/UIAlertViewDimming.png; sourceTree = "<group>"; };
+		307D8BDB1F29B9CA004EACF4 /* UIAlertViewDimming@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIAlertViewDimming@2x.png"; path = "iOS6AlertViewLib/UIAlertViewDimming@2x.png"; sourceTree = "<group>"; };
+		307D8BDC1F29B9CA004EACF4 /* UIPopupAlertBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIPopupAlertBackground.png; path = iOS6AlertViewLib/UIPopupAlertBackground.png; sourceTree = "<group>"; };
+		307D8BDD1F29B9CA004EACF4 /* UIPopupAlertBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertBackground@2x.png"; path = "iOS6AlertViewLib/UIPopupAlertBackground@2x.png"; sourceTree = "<group>"; };
+		307D8BDE1F29B9CA004EACF4 /* UIPopupAlertSheetButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIPopupAlertSheetButton.png; path = iOS6AlertViewLib/UIPopupAlertSheetButton.png; sourceTree = "<group>"; };
+		307D8BDF1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetButton@2x.png"; path = "iOS6AlertViewLib/UIPopupAlertSheetButton@2x.png"; sourceTree = "<group>"; };
+		307D8BE01F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIPopupAlertSheetButtonPress.png; path = iOS6AlertViewLib/UIPopupAlertSheetButtonPress.png; sourceTree = "<group>"; };
+		307D8BE11F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetButtonPress@2x.png"; path = "iOS6AlertViewLib/UIPopupAlertSheetButtonPress@2x.png"; sourceTree = "<group>"; };
+		307D8BE21F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIPopupAlertSheetDefaultButton.png; path = iOS6AlertViewLib/UIPopupAlertSheetDefaultButton.png; sourceTree = "<group>"; };
+		307D8BE31F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIPopupAlertSheetDefaultButton@2x.png"; path = "iOS6AlertViewLib/UIPopupAlertSheetDefaultButton@2x.png"; sourceTree = "<group>"; };
+		307D8BEF1F29B9DE004EACF4 /* iOS6Switch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6Switch.h; path = iOS6SwitchLib/iOS6Switch.h; sourceTree = "<group>"; };
+		307D8BF01F29B9DE004EACF4 /* iOS6Switch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6Switch.m; path = iOS6SwitchLib/iOS6Switch.m; sourceTree = "<group>"; };
+		307D8BF11F29B9DE004EACF4 /* UISwitchShapeMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UISwitchShapeMask.png; path = iOS6SwitchLib/UISwitchShapeMask.png; sourceTree = "<group>"; };
+		307D8BF21F29B9DE004EACF4 /* UISwitchShapeMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchShapeMask@2x.png"; path = "iOS6SwitchLib/UISwitchShapeMask@2x.png"; sourceTree = "<group>"; };
+		307D8BF31F29B9DE004EACF4 /* UISwitchShapeShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UISwitchShapeShadow.png; path = iOS6SwitchLib/UISwitchShapeShadow.png; sourceTree = "<group>"; };
+		307D8BF41F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchShapeShadow@2x.png"; path = "iOS6SwitchLib/UISwitchShapeShadow@2x.png"; sourceTree = "<group>"; };
+		307D8BF51F29B9DE004EACF4 /* UISwitchThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UISwitchThumb.png; path = iOS6SwitchLib/UISwitchThumb.png; sourceTree = "<group>"; };
+		307D8BF61F29B9DE004EACF4 /* UISwitchThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchThumb@2x.png"; path = "iOS6SwitchLib/UISwitchThumb@2x.png"; sourceTree = "<group>"; };
+		307D8BF71F29B9DE004EACF4 /* UISwitchThumbPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UISwitchThumbPressed.png; path = iOS6SwitchLib/UISwitchThumbPressed.png; sourceTree = "<group>"; };
+		307D8BF81F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchThumbPressed@2x.png"; path = "iOS6SwitchLib/UISwitchThumbPressed@2x.png"; sourceTree = "<group>"; };
 		30CFE4E01EC1B3CA00882B6F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		30CFE4E11EC1B3CA00882B6F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		30E1E1D31EBB3AB8004079AE /* LinenSettings@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LinenSettings@2x~ipad.png"; sourceTree = "<group>"; };
@@ -271,6 +313,16 @@
 		30C8B3891F28AB46009EEE8E /* iOS6SwitchLib */ = {
 			isa = PBXGroup;
 			children = (
+				307D8BEF1F29B9DE004EACF4 /* iOS6Switch.h */,
+				307D8BF01F29B9DE004EACF4 /* iOS6Switch.m */,
+				307D8BF11F29B9DE004EACF4 /* UISwitchShapeMask.png */,
+				307D8BF21F29B9DE004EACF4 /* UISwitchShapeMask@2x.png */,
+				307D8BF31F29B9DE004EACF4 /* UISwitchShapeShadow.png */,
+				307D8BF41F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png */,
+				307D8BF51F29B9DE004EACF4 /* UISwitchThumb.png */,
+				307D8BF61F29B9DE004EACF4 /* UISwitchThumb@2x.png */,
+				307D8BF71F29B9DE004EACF4 /* UISwitchThumbPressed.png */,
+				307D8BF81F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png */,
 			);
 			name = iOS6SwitchLib;
 			sourceTree = "<group>";
@@ -278,6 +330,18 @@
 		30C8B39D1F28ABA6009EEE8E /* iOS6AlertViewLib */ = {
 			isa = PBXGroup;
 			children = (
+				307D8BD81F29B9CA004EACF4 /* iOS6AlertView.h */,
+				307D8BD91F29B9CA004EACF4 /* iOS6AlertView.m */,
+				307D8BDA1F29B9CA004EACF4 /* UIAlertViewDimming.png */,
+				307D8BDB1F29B9CA004EACF4 /* UIAlertViewDimming@2x.png */,
+				307D8BDC1F29B9CA004EACF4 /* UIPopupAlertBackground.png */,
+				307D8BDD1F29B9CA004EACF4 /* UIPopupAlertBackground@2x.png */,
+				307D8BDE1F29B9CA004EACF4 /* UIPopupAlertSheetButton.png */,
+				307D8BDF1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png */,
+				307D8BE01F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png */,
+				307D8BE11F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png */,
+				307D8BE21F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png */,
+				307D8BE31F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png */,
 			);
 			name = iOS6AlertViewLib;
 			sourceTree = "<group>";
@@ -341,12 +405,17 @@
 			files = (
 				2C35D8671D3279CB00F4B6EC /* Linen-414w-736h@3x~iphone.png in Resources */,
 				2C35D8661D3279CB00F4B6EC /* Linen-375w-667h@2x~iphone.png in Resources */,
+				307D8BFB1F29B9DE004EACF4 /* UISwitchShapeMask@2x.png in Resources */,
 				2C21C6581D0C97D7000F4E58 /* Linen@2x~ipad.png in Resources */,
+				307D8BE91F29B9CA004EACF4 /* UIPopupAlertSheetButton.png in Resources */,
+				307D8BE51F29B9CA004EACF4 /* UIAlertViewDimming.png in Resources */,
 				2C4850AD1D3AA55C00B398EE /* WayOutLogo~iphone.png in Resources */,
 				2C66438B1E2189A300625250 /* Corners_Black_Right.png in Resources */,
+				307D8BFA1F29B9DE004EACF4 /* UISwitchShapeMask.png in Resources */,
 				2C01B3131D131E2A00C5EB3E /* icon.png in Resources */,
 				2C167D021D0762FC00E93D80 /* Linen-568h@2x.png in Resources */,
 				2C21C6591D0C97D7000F4E58 /* Linen~ipad.png in Resources */,
+				307D8C011F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png in Resources */,
 				2C21C6611D0C9935000F4E58 /* WellLock~ipad.png in Resources */,
 				2C5FD1351D04A54600F8AF9A /* bottombarbkgnd@2x.png in Resources */,
 				305EFC861F28F40400879872 /* runasroot in Resources */,
@@ -355,16 +424,27 @@
 				2C4850AF1D3AAB8400B398EE /* icon@3x.png in Resources */,
 				2C882B4F1D85A34400EB78C3 /* MyriadPro-Semibold.otf in Resources */,
 				3008F85D1ED9AA3D0028D161 /* UIScrollerIndicatorBlack.png in Resources */,
+				307D8BEE1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */,
 				2C126ED41E65BDFF00E17A59 /* UINavigationBarBlackTranslucentBackground.png in Resources */,
 				2C8B802D1E1EC7D400C8D90E /* Corners_Black_Left@2x.png in Resources */,
+				307D8BEC1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png in Resources */,
+				307D8BEB1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png in Resources */,
 				2C4631D11D05738B00D07144 /* bottombarknobgray@2x.png in Resources */,
+				307D8BFD1F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png in Resources */,
+				307D8BE61F29B9CA004EACF4 /* UIAlertViewDimming@2x.png in Resources */,
+				307D8BEA1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png in Resources */,
+				307D8BED1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png in Resources */,
 				30E1E1D51EBB3AB8004079AE /* LinenSettings@2x~ipad.png in Resources */,
 				2C5FD1401D04B34600F8AF9A /* InfoButton.png in Resources */,
 				2C4D10401D2D6E7800F74E80 /* NoSupport@2x~ipad.png in Resources */,
 				2C5FD12E1D04A44F00F8AF9A /* Linen@2x~iphone.png in Resources */,
+				307D8BFC1F29B9DE004EACF4 /* UISwitchShapeShadow.png in Resources */,
+				307D8C001F29B9DE004EACF4 /* UISwitchThumbPressed.png in Resources */,
 				2C5FD12F1D04A44F00F8AF9A /* Linen~iphone.png in Resources */,
 				2C608F061E61ADFB00CD3A94 /* CellSeparator@2x.png in Resources */,
+				307D8BFF1F29B9DE004EACF4 /* UISwitchThumb@2x.png in Resources */,
 				2C5FD1411D04B34600F8AF9A /* InfoButton@2x.png in Resources */,
+				307D8BE81F29B9CA004EACF4 /* UIPopupAlertBackground@2x.png in Resources */,
 				2CD3A77F1E60414D007F6531 /* UINavigationBarBlackTranslucentBackground@2x.png in Resources */,
 				2C21C6601D0C9935000F4E58 /* WellLock@2x~ipad.png in Resources */,
 				2C48FFAE1D3D2E3400F6DA72 /* Linen-1024w-1366h@2x~ipad.png in Resources */,
@@ -375,6 +455,7 @@
 				305EFC851F28F40400879872 /* multi_kloader in Resources */,
 				2C4850AC1D3AA55C00B398EE /* WayOutLogo~ipad.png in Resources */,
 				2C5FD1341D04A54600F8AF9A /* bottombarbkgnd.png in Resources */,
+				307D8BFE1F29B9DE004EACF4 /* UISwitchThumb.png in Resources */,
 				2C66438A1E2189A300625250 /* Corners_Black_Left.png in Resources */,
 				2C5FD13D1D04AE2C00F8AF9A /* icon@2x~ipad.png in Resources */,
 				2C35D86B1D329C4400F4B6EC /* LinenTiled@2x.png in Resources */,
@@ -386,6 +467,7 @@
 				3008F85A1ED9A4390028D161 /* UIScrollerIndicatorBlack@2x.png in Resources */,
 				2C21C65E1D0C9935000F4E58 /* bottombarbkgnd@2x~ipad.png in Resources */,
 				2CBA4E5C1D08109900829791 /* bottombarlocktextmask@2x.png in Resources */,
+				307D8BE71F29B9CA004EACF4 /* UIPopupAlertBackground.png in Resources */,
 				2C6A29C71E65DCDE0034B0AC /* UINavigationBarBlackTranslucentRightCorner.png in Resources */,
 				2C8B802E1E1EC7D400C8D90E /* Corners_Black_Right@2x.png in Resources */,
 				2C5FD13C1D04AE2C00F8AF9A /* icon~ipad.png in Resources */,
@@ -407,6 +489,8 @@
 				2C64B43B1E44BAF900C356D6 /* AboutView.m in Sources */,
 				2C8B802F1E1ED5EE00C8D90E /* AppDelegate.m in Sources */,
 				30CFE4E21EC1B3CA00882B6F /* ViewController.m in Sources */,
+				307D8BF91F29B9DE004EACF4 /* iOS6Switch.m in Sources */,
+				307D8BE41F29B9CA004EACF4 /* iOS6AlertView.m in Sources */,
 				2CD3A7701E601CA3007F6531 /* SettingsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

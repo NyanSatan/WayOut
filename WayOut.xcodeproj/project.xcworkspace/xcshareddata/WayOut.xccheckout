@@ -10,10 +10,10 @@
 	<string>WayOut</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>37104BE5BEAC5B1735B89BD02C8873688D0B3B79</key>
+		<string>github.com:NyanSatan/WayOut.git</string>
 		<key>C4F335284400C5DFCE72D6B741DF68153ACAC162</key>
 		<string>https://github.com/NyanSatan/iOS6Switch.git</string>
-		<key>F604CBC12AC37670942B750019FA1BA2D6CB91E8</key>
-		<string>github.com:NyanSatan/WayOut.git</string>
 		<key>FD44FFD1078576713193740522ABA2A922E64505</key>
 		<string>github.com:NyanSatan/iOS6AlertView.git</string>
 	</dict>
@@ -21,10 +21,10 @@
 	<string>WayOut.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>37104BE5BEAC5B1735B89BD02C8873688D0B3B79</key>
+		<string>../..</string>
 		<key>C4F335284400C5DFCE72D6B741DF68153ACAC162</key>
 		<string>../../../iOS6Switch</string>
-		<key>F604CBC12AC37670942B750019FA1BA2D6CB91E8</key>
-		<string>../..</string>
 		<key>FD44FFD1078576713193740522ABA2A922E64505</key>
 		<string>../../../iOS6AlertView</string>
 	</dict>
@@ -33,7 +33,7 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F604CBC12AC37670942B750019FA1BA2D6CB91E8</string>
+	<string>37104BE5BEAC5B1735B89BD02C8873688D0B3B79</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -56,7 +56,7 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F604CBC12AC37670942B750019FA1BA2D6CB91E8</string>
+			<string>37104BE5BEAC5B1735B89BD02C8873688D0B3B79</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WayOut</string>
 		</dict>
