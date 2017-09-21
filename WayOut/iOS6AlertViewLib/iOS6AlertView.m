@@ -2,8 +2,8 @@
 //  iOS6AlertView.m
 //  iOS6AlertView
 //
-//  Created by noname on 19/05/17.
-//  Copyright (c) 2017 noname. All rights reserved.
+//  Created on 19/05/17.
+//
 //
 
 #import "iOS6AlertView.h"
@@ -87,6 +87,7 @@ CABasicAnimation *back;
     
     UILabel *titleLabel = [[UILabel alloc] init];
     UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+    titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.font = titleFont;
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.shadowOffset = CGSizeMake(0, -0.75);
@@ -97,6 +98,7 @@ CABasicAnimation *back;
     titleLabel.frame = CGRectMake(xPosition, contentOffset, contentWidth, [self getLabelHeightOfString:title font:titleFont width:contentWidth]);
     
     UILabel *messageLabel = [[UILabel alloc] init];
+    messageLabel.backgroundColor = [UIColor clearColor];
     messageLabel.textColor = [UIColor whiteColor];
     messageLabel.shadowColor = [UIColor blackColor];
     messageLabel.shadowOffset = CGSizeMake(0, -0.5);
@@ -258,14 +260,12 @@ CABasicAnimation *back;
 - (CGFloat)getLabelHeightOfString:(NSString*)string font:(UIFont*)font width:(CGFloat)width {
     
     CGRect rect = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : font} context:nil];
-    
     return ceilf(rect.size.height);
 }
 
 - (CGFloat)getLabelHeightOfAttributedString:(NSAttributedString*)string width:(CGFloat)width {
     
     CGRect rect = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
-    
     return ceilf(rect.size.height);
 }
 

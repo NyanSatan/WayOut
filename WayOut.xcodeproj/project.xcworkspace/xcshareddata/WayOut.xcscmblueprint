@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "37104BE5BEAC5B1735B89BD02C8873688D0B3B79",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C4F335284400C5DFCE72D6B741DF68153ACAC162" : 0,
+    "FD44FFD1078576713193740522ABA2A922E64505" : 0,
+    "37104BE5BEAC5B1735B89BD02C8873688D0B3B79" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D66DEC6C-997B-42F1-A02F-5239C3FDCA48",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C4F335284400C5DFCE72D6B741DF68153ACAC162" : "iOS6Switch",
+    "FD44FFD1078576713193740522ABA2A922E64505" : "iOS6AlertView",
+    "37104BE5BEAC5B1735B89BD02C8873688D0B3B79" : "WayOut"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WayOut",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WayOut.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:NyanSatan\/WayOut.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "37104BE5BEAC5B1735B89BD02C8873688D0B3B79"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/NyanSatan\/iOS6Switch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C4F335284400C5DFCE72D6B741DF68153ACAC162"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:NyanSatan\/iOS6AlertView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD44FFD1078576713193740522ABA2A922E64505"
+    }
+  ]
+}

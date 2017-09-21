@@ -26,22 +26,28 @@
 
 + (BOOL)isMultiKloaderNeeded {
     
-    return [[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue];
+    if ([[[UIDevice currentDevice] systemVersion] intValue] < 6) {
+        
+        return NO;
+        
+    } else {
+        
+        return [[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue];
+    }
 }
 
 + (BOOL)isImageExistAtPath:(NSString*)path {
     
     BOOL result = '\0';
     
-    
-        NSFileHandle *fd = [NSFileHandle fileHandleForReadingAtPath:path];
+    NSFileHandle *fd = [NSFileHandle fileHandleForReadingAtPath:path];
         
-        if (fd != nil) {
-            result = YES;
-        } else {
-            result = NO;
-        }
-    
+    if (fd != nil) {
+        result = YES;
+    } else {
+        result = NO;
+    }
+
     return result;
 }
 
@@ -84,19 +90,68 @@
     return result;
 }
 
-+ (void)bootX {
++ (BOOL)doesBelongToS5L8940Family {
     
+    void *handle = dlopen("/usr/lib/libMobileGestalt.dylib", RTLD_LAZY);
+    CFPropertyListRef (*MGCopyAnswer)(CFStringRef property);
+    MGCopyAnswer = dlsym(handle, "MGCopyAnswer");
+    NSString *platform = [(__bridge NSDictionary*)MGCopyAnswer(CFSTR("HardwarePlatform")) description];
+    dlclose(handle);
     
-    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue]) {
+    if ([platform isEqualToString:@"s5l8940x"] || [platform isEqualToString:@"s5l8942x"] || [platform isEqualToString:@"s5l8945x"]) {
         
-        system([[NSString stringWithFormat:@"%@ %@", [[NSBundle mainBundle] pathForResource:@"kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+        return YES;
         
     } else {
         
-        system([[NSString stringWithFormat:@"%@ %@ %@", [[NSBundle mainBundle] pathForResource:@"multi_kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
-        
+        return NO;
     }
     
+}
+
++ (void)bootX {
+    
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue]) {
+        
+        system([[NSString stringWithFormat:@"%@ %@", [[NSBundle mainBundle] pathForResource:[[[UIDevice currentDevice] systemVersion] intValue] > 5 ? @"kloader" : @"kloader_ios5" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+        
+    } else {
+        
+        if ([self doesBelongToS5L8940Family]) {
+            
+            system([[NSString stringWithFormat:@"%@ %@ %@", [[NSBundle mainBundle] pathForResource:@"4smulti_kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+            
+        } else {
+            
+            system([[NSString stringWithFormat:@"%@ %@ %@", [[NSBundle mainBundle] pathForResource:@"multi_kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+
+        }
+    }
+}
+
++ (NSString*)getiBootInfoForImage:(NSInteger)imageNumber ofType:(iBootInfoType)infoType {
+    
+    NSString* image = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"Image %ld", (long)imageNumber]];
+    
+    if ([self isImageExistAtPath:image]) {
+        
+        if (imageNumber == 1 ? [self isARMImageValidAtPath:image] : [self isIMG3ImageValidAtPath:image]) {
+            
+            if (infoType == iBootType) {
+                return [self getiBootTypeAtPath:image isIMG3:(imageNumber-1)];
+            } else {
+                return [self getiBootVersionAtPath:image isIMG3:(imageNumber-1)];
+            }
+            
+        } else {
+            return @"Image not valid";
+        }
+        
+    } else {
+        return @"Image not exists";
+    }
+    
+    return nil;
 }
 
 #define TYPELENGTH 0x40
@@ -121,6 +176,8 @@
     NSRange range = [type rangeOfString:@","];
     NSString *result = [type substringWithRange:NSMakeRange(0, range.location)];
     
+    close(fd);
+    
     return result;
 }
 
@@ -137,12 +194,14 @@
     
     NSString *result = [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
     
+    close(fd);
+    
     return result;
 }
 
 + (void)generateDefaults {
 
-    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"multi_kloader"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:[[[UIDevice currentDevice] systemVersion] intValue] < 6 ? NO : YES] forKey:@"multi_kloader"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"Image 1"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"Image 2"];
     [[NSUserDefaults standardUserDefaults] synchronize];

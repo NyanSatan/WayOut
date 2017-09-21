@@ -34,7 +34,7 @@
             break;
             
         default:
-            description = @"Undefined CPU architecture";
+            description = @"Perhaps you're running it on simulator? Add x86_64 to set in AppDelegate";
             break;
     }
        
@@ -48,7 +48,7 @@
     UIImageView *deviceImageView = [[UIImageView alloc] initWithFrame:CGRectMake((screenRect.size.width/2-deviceImage.size.width/2), (screenRect.size.height/2-deviceImage.size.height/2)-70, deviceImage.size.width, deviceImage.size.height)];
     deviceImageView.image = deviceImage;
     
-    UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake((screenRect.size.width/2-270/2), deviceImageView.frame.origin.y+deviceImageView.frame.size.height+75, 270, 100)];
+    UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake((screenRect.size.width/2-270/2), deviceImageView.frame.origin.y+deviceImageView.frame.size.height+75, 270, 150)];
     labelView.backgroundColor = [UIColor clearColor];
     CATextLayer *headerLayer = [CATextLayer layer];
     headerLayer.backgroundColor = [UIColor clearColor].CGColor;
@@ -59,32 +59,37 @@
     headerLayer.frame = CGRectMake(0, 0, labelView.layer.frame.size.width, 45);
     headerLayer.alignmentMode = kCAAlignmentCenter;
     [labelView.layer addSublayer:headerLayer];
+   
+    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, headerLayer.frame.size.height, labelView.layer.frame.size.width, 70)];
+    descriptionLabel.backgroundColor = [UIColor clearColor];
+    descriptionLabel.text = description;
+    descriptionLabel.textColor = [UIColor whiteColor];
+    descriptionLabel.numberOfLines = 0;
+    descriptionLabel.font = [UIFont fontWithName:@"Helvetica" size:18];
+    descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    descriptionLabel.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+    descriptionLabel.shadowOffset = CGSizeMake(0, -1);
+    [labelView addSubview:descriptionLabel];
     
-    CATextLayer *descriptionLayer = [CATextLayer layer];
-    descriptionLayer.backgroundColor = [UIColor clearColor].CGColor;
-    descriptionLayer.string = description;
-    descriptionLayer.font = (__bridge CFTypeRef)@"Helvetica";
-    descriptionLayer.fontSize = 18;
-    descriptionLayer.contentsScale = [[UIScreen mainScreen] scale];
-    descriptionLayer.frame = CGRectMake(0, headerLayer.frame.size.height, labelView.layer.frame.size.width, 25);
-    descriptionLayer.alignmentMode = kCAAlignmentCenter;
-    [labelView.layer addSublayer:descriptionLayer];
-    
-    UIImage *infoButtonImage = [UIImage imageNamed:@"InfoButton"];
-    UIButton *infoButton = [[UIButton alloc] initWithFrame:CGRectMake(screenRect.size.width-infoButtonImage.size.width-8, screenRect.size.height-infoButtonImage.size.height-8 , infoButtonImage.size.width, infoButtonImage.size.height)];
-    [infoButton setImage:infoButtonImage forState:UIControlStateNormal];
-    [infoButton addTarget:self action:@selector(InfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:backgroundImage];
     [self.view addSubview:deviceImageView];
     [self.view addSubview:labelView];
-    [self.view addSubview:infoButton];
     
+    if ([[UIScreen mainScreen] scale] != 3) {
+        
+        UIImage *infoButtonImage = [UIImage imageNamed:@"InfoButton"];
+        UIButton *infoButton = [[UIButton alloc] initWithFrame:CGRectMake(screenRect.size.width-infoButtonImage.size.width-8, screenRect.size.height-infoButtonImage.size.height-8 , infoButtonImage.size.width, infoButtonImage.size.height)];
+        [infoButton setImage:infoButtonImage forState:UIControlStateNormal];
+        [infoButton addTarget:self action:@selector(InfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:infoButton];
+    }
+
 }
 
--(IBAction)InfoButtonAction:(id)sender {
+- (IBAction)InfoButtonAction:(id)sender {
 
-    iOS6AlertView *infoButton = [[iOS6AlertView alloc] initWithTitle:[NSString stringWithFormat:@"Way Out %@ (%@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]] message:@"Way Out supports only iOS 6 compatible devices\n\nUse iPhone 5, iPad 4, iPad mini 1G, iPod touch 5 or older" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitle:nil backgroundImage:[UIImage imageNamed:@"UIPopupAlertBackground"] dimmingImage:[UIImage imageNamed:@"UIAlertViewDimming"] position:CGPointZero animated:YES];
+    iOS6AlertView *infoButton = [[iOS6AlertView alloc] initWithTitle:[NSString stringWithFormat:@"Way Out %@ (%@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]] message:@"Way Out supports only iOS 6 compatible devices\n\nUse iPhone 5, iPad 4, iPad mini 1G, iPod touch 5 or older" delegate:nil cancelButtonTitle:nil otherButtonTitle:@"Cancel" backgroundImage:[UIImage imageNamed:@"UIPopupAlertBackground"] dimmingImage:[UIImage imageNamed:@"UIAlertViewDimming"] position:CGPointZero animated:YES];
     [infoButton show];
 }
 

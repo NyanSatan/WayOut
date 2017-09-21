@@ -18,20 +18,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSSet *supportedPlatforms = [NSSet setWithObjects:@"iPhone3,1", @"iPhone3,2", @"iPhone3,3", @"iPhone4,1", @"iPhone5,1", @"iPhone5,2", @"iPod4,1", @"iPod5,1", @"iPad2,1", @"iPad2,2", @"iPad2,3", @"iPad2,4", @"iPad2,5", @"iPad2,6", @"iPad2,7", @"iPad3,1", @"iPad3,2", @"iPad3,3" @"iPad3,4", @"iPad3,5", @"iPad3,6", @"x86_64", nil];
-    
+    NSSet *supportedPlatforms = [NSSet setWithObjects:@"iPhone2,1", @"iPhone3,1", @"iPhone3,2", @"iPhone3,3", @"iPhone4,1", @"iPhone5,1", @"iPhone5,2", @"iPod3,1", @"iPod4,1", @"iPod5,1", @"iPad2,1", @"iPad2,2", @"iPad2,3", @"iPad2,4", @"iPad2,5", @"iPad2,6", @"iPad2,7", @"iPad3,1", @"iPad3,2", @"iPad3,3" @"iPad3,4", @"iPad3,5", @"iPad3,6", nil];
+
     char model[16];
     size_t size = sizeof(model);
     sysctlbyname("hw.machine", model, &size, NULL, 0);
 
     if ([supportedPlatforms containsObject:[NSString stringWithCString:model encoding:NSASCIIStringEncoding]]) {
         
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        self.ViewController = [[ViewController alloc] init];
-        self.window.rootViewController = self.ViewController;
-        [self.window makeKeyAndVisible];
+        int iOSVersion = [[[UIDevice currentDevice] systemVersion] intValue];
+        
+        if (iOSVersion > 6) {
+            
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            self.ViewController = [[ViewController alloc] init];
+            self.window.rootViewController = self.ViewController;
+            [self.window makeKeyAndVisible];
+            
+        } else {
+            
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            self.ViewControllerForiOS6 = [[ViewControllerForiOS6 alloc] init];
+            self.window.rootViewController = self.ViewControllerForiOS6;
+            [self.window makeKeyAndVisible];
+            
+            if (iOSVersion > 5) {
+            
+                [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextColor:[UIColor whiteColor]];
+                [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setShadowColor:[UIColor blackColor]];
+                [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setShadowOffset:CGSizeMake(0, -1)];
+            }
+        
+        }
         
     } else {
+        
+        if ([[UIScreen mainScreen] scale] > 2) {
+            [self adaptForiPhonePlus];
+        }
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         self.NoSupportViewController = [[NoSupportViewController alloc] init];
@@ -42,7 +66,7 @@
     if (![ImageValidation isConfigValid]) {
         [ImageValidation generateDefaults];
     }
-    
+
     return YES;
     
 }
@@ -71,6 +95,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     exit(-9);
+}
+
+- (void)adaptForiPhonePlus {
+    
+    [[NSFileManager defaultManager] moveItemAtPath:[[NSBundle mainBundle] pathForResource:@"LinenTiled@2x" ofType:@"png"] toPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"LinenTiled@3x.png"] error:nil];
+    [[NSFileManager defaultManager] moveItemAtPath:[[NSBundle mainBundle] pathForResource:@"NoSupport@2x~iphone" ofType:@"png"] toPath:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"NoSupport@3x~iphone.png"] error:nil];
+    
 }
 
 @end

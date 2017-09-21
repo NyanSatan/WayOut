@@ -2,8 +2,8 @@
 //  iOS6AlertView.h
 //  iOS6AlertView
 //
-//  Created by noname on 19/05/17.
-//  Copyright (c) 2017 noname. All rights reserved.
+//  Created on 19/05/17.
+//
 //
 
 #import <UIKit/UIKit.h>
