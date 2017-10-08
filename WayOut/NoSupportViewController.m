@@ -45,10 +45,10 @@
     backgroundImage.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LinenTiled"]];
     
     UIImage *deviceImage = [UIImage imageNamed:@"NoSupport"];
-    UIImageView *deviceImageView = [[UIImageView alloc] initWithFrame:CGRectMake((screenRect.size.width/2-deviceImage.size.width/2), (screenRect.size.height/2-deviceImage.size.height/2)-70, deviceImage.size.width, deviceImage.size.height)];
+    UIImageView *deviceImageView = [[UIImageView alloc] initWithFrame:CGRectMake(ceilf(screenRect.size.width/2-deviceImage.size.width/2), ceilf(screenRect.size.height/2-deviceImage.size.height/2)-70, deviceImage.size.width, deviceImage.size.height)];
     deviceImageView.image = deviceImage;
     
-    UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake((screenRect.size.width/2-270/2), deviceImageView.frame.origin.y+deviceImageView.frame.size.height+75, 270, 150)];
+    UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(ceilf(screenRect.size.width/2-270/2), deviceImageView.frame.origin.y+deviceImageView.frame.size.height+75, 270, 150)];
     labelView.backgroundColor = [UIColor clearColor];
     CATextLayer *headerLayer = [CATextLayer layer];
     headerLayer.backgroundColor = [UIColor clearColor].CGColor;
@@ -71,7 +71,6 @@
     descriptionLabel.shadowOffset = CGSizeMake(0, -1);
     [labelView addSubview:descriptionLabel];
     
-    
     [self.view addSubview:backgroundImage];
     [self.view addSubview:deviceImageView];
     [self.view addSubview:labelView];
@@ -79,7 +78,7 @@
     if ([[UIScreen mainScreen] scale] != 3) {
         
         UIImage *infoButtonImage = [UIImage imageNamed:@"InfoButton"];
-        UIButton *infoButton = [[UIButton alloc] initWithFrame:CGRectMake(screenRect.size.width-infoButtonImage.size.width-8, screenRect.size.height-infoButtonImage.size.height-8 , infoButtonImage.size.width, infoButtonImage.size.height)];
+        UIButton *infoButton = [[UIButton alloc] initWithFrame:CGRectMake(screenRect.size.width-infoButtonImage.size.width-15, screenRect.size.height-infoButtonImage.size.height-16 , infoButtonImage.size.width, infoButtonImage.size.height)];
         [infoButton setImage:infoButtonImage forState:UIControlStateNormal];
         [infoButton addTarget:self action:@selector(InfoButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:infoButton];

@@ -23,6 +23,7 @@
      
     [self setBackgroundColor:[UIColor clearColor]];
     [self setBackgroundView:[self drawCell]];
+    [[self.backgroundView superview].layer setMasksToBounds:NO];
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     [self.textLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:17]];
