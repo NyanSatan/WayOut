@@ -43,9 +43,6 @@ int main(int argc, char * argv[]) {
     
     @autoreleasepool {
         
-        setuid(0);
-        setgid(0);
-        
         if (argc > 1) {
             
             if (strcmp(argv[1], "--icon") == 0) {

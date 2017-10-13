@@ -109,14 +109,6 @@
     dimmingImage = [UIImage imageNamed:@"UIAlertViewDimming"];
     
     aboutView = [[iOS6AlertView alloc] initWithTitle:[NSString stringWithFormat:@"Way Out %@ (%@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]] message:@"Way Out - GUI for kloader in the spirit of classical Setup.app. Developed by @nyan_satan\n\nThanks to:\n@winocm, @xerub, @JonathanSeals, @axi0mX" delegate:self cancelButtonTitle:nil otherButtonTitle:@"Settings" backgroundImage:alertImage dimmingImage:dimmingImage position:CGPointMake(0, screenRect.size.height == 568.0 ? 114 : (screenRect.size.height == 480.0 ? 70 : 328)) animated:NO];
-
-    if (getuid() != 0) {
-        
-        iOS6AlertView *invalidUID = [[iOS6AlertView alloc] initWithTitle:@"This program must be run as root" message:@"You either run it through Xcode or there is something wrong with your fstab" delegate:nil cancelButtonTitle:nil otherButtonTitle:@"Dismiss" backgroundImage:alertImage dimmingImage:dimmingImage position:CGPointZero animated:YES];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[invalidUID show];});
-
-    }
     
 }
 

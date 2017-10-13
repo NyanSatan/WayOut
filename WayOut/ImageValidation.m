@@ -111,22 +111,27 @@
 
 + (void)bootX {
     
+    NSString *kloader;
+    
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue]) {
         
-        system([[NSString stringWithFormat:@"%@ %@", [[NSBundle mainBundle] pathForResource:[[[UIDevice currentDevice] systemVersion] intValue] > 5 ? @"kloader" : @"kloader_ios5" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+        kloader = [[NSBundle mainBundle] pathForResource:[[[UIDevice currentDevice] systemVersion] intValue] > 5 ? @"kloader" : @"kloader_ios5" ofType:nil];
         
     } else {
         
         if ([self doesBelongToS5L8940Family]) {
             
-            system([[NSString stringWithFormat:@"%@ %@ %@", [[NSBundle mainBundle] pathForResource:@"4smulti_kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+            kloader = [[NSBundle mainBundle] pathForResource:@"4smulti_kloader" ofType:nil];
             
         } else {
             
-            system([[NSString stringWithFormat:@"%@ %@ %@", [[NSBundle mainBundle] pathForResource:@"multi_kloader" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+            kloader = [[NSBundle mainBundle] pathForResource:@"multi_kloader" ofType:nil];
 
         }
     }
+    
+    system([[NSString stringWithFormat:@"%@ \"%@ %@ %@\"", [[NSBundle mainBundle] pathForResource:@"WayOutHelper" ofType:nil], kloader, [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+    
 }
 
 + (NSString*)getiBootInfoForImage:(NSInteger)imageNumber ofType:(iBootInfoType)infoType {

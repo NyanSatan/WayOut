@@ -101,13 +101,6 @@
     [logoImageView setImage:logoImage];
     [self.view addSubview:logoImageView];
     
-    if (getuid() != 0) {
-        
-        UIAlertView *invalidUID = [[UIAlertView alloc] initWithTitle:@"This program must be run as root" message:@"You either run it through Xcode or there is something wrong with your fstab" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[invalidUID show];});
-        
-    }
-    
 }
 
 - (void)willPresentAlertView:(UIAlertView *)alertView {

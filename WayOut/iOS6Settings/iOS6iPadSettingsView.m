@@ -48,7 +48,7 @@
     [self.layer addSublayer:baseLayer];
     
     darkLayer = [[UIView alloc] init];
-    [darkLayer setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.6]];
+    [darkLayer setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.75]];
     [darkLayer setFrame:[[UIScreen mainScreen] bounds]];
     
     table = [[UITableView alloc] initWithFrame:CGRectMake(shadowOffset, shadowOffset, linen.size.width-shadowOffset*2, linen.size.height-shadowOffset*2) style:UITableViewStyleGrouped];
