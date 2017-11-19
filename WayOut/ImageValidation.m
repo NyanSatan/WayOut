@@ -130,7 +130,13 @@
         }
     }
     
-    system([[NSString stringWithFormat:@"%@ \"%@ %@ %@\"", [[NSBundle mainBundle] pathForResource:@"WayOutHelper" ofType:nil], kloader, [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]] cStringUsingEncoding:NSASCIIStringEncoding]);
+    system([[NSString stringWithFormat:@"%@ -b \"%@ %@ %@\"", [[NSBundle mainBundle] pathForResource:@"WayOutHelper" ofType:nil], kloader, [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"], [self isMultiKloaderNeeded] ? [[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"] : @""] cStringUsingEncoding:NSASCIIStringEncoding]);
+    
+}
+
++ (void)executeScript {
+    
+    system([[NSString stringWithFormat:@"%@ -s %@", [[NSBundle mainBundle] pathForResource:@"WayOutHelper" ofType:nil], [[NSUserDefaults standardUserDefaults] valueForKey:@"Pre-boot script"]] cStringUsingEncoding:NSASCIIStringEncoding]);
     
 }
 
@@ -204,11 +210,47 @@
     return result;
 }
 
++ (NSString*)getScriptType {
+    
+    NSString *script = [[NSUserDefaults standardUserDefaults] objectForKey:@"Pre-boot script"];
+    
+    if ([self isImageExistAtPath:script]) {
+        
+        int fd = open([script cStringUsingEncoding:NSASCIIStringEncoding], O_RDONLY, 0);
+        char buffer[100];
+        pread(fd, buffer, 100, 0);
+        close(fd);
+        
+        uint32_t magic = *(uint32_t*)buffer;
+        if (magic == MH_MAGIC || magic == MH_MAGIC_64 || magic == MH_CIGAM || magic == MH_CIGAM_64 || magic == FAT_MAGIC || magic == FAT_CIGAM) {
+            return @"Mach-O";
+        }
+        
+        char *hashbang = strstr(buffer, "#!");
+        if (hashbang != NULL) {
+            char *nextLine = strstr(hashbang, "\x0A");
+            if (nextLine != NULL) {
+                hashbang[nextLine - hashbang] = 0x0;
+                hashbang = hashbang + 2;
+                return [[NSString stringWithUTF8String:hashbang] lastPathComponent];
+            }
+        }
+        
+        return @"Unknown";
+        
+    } else {
+        
+        return @"Script not exists";
+    }
+    
+}
+
 + (void)generateDefaults {
 
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:[[[UIDevice currentDevice] systemVersion] intValue] < 6 ? NO : YES] forKey:@"multi_kloader"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"Image 1"];
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"Image 2"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"Pre-boot script"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

@@ -72,9 +72,15 @@
             statusLabel.text = @"Validating images...";
             labelWidth = 158;
             break;
+        case 4:
+            statusLabel.text = @"Executing script...";
+            labelWidth = 146;
+            break;
         default:
             break;
     }
+    
+    NSLog(@"%@", statusLabel);
     
     CGFloat positionY = 17;
     CGFloat indicatorWidth = 20;

@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, iOS6DetailCellType) {
     iOS6DetailCellTypeVersion
 };
 
-- (instancetype)initForPosition:(iOS6TableViewCellPosition)position withTableViewWidth:(CGFloat)width withType:(iOS6DetailCellType)type forSection:(NSInteger)section;
+- (instancetype)initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition withType:(iOS6DetailCellType)type forSection:(NSInteger)section;
 
 @end

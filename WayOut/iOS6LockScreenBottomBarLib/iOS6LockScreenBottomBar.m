@@ -19,6 +19,8 @@
     CABasicAnimation *shimmering;
     CALayer *shimmerImage;
     CALayer *darkLayer;
+    
+    UIButton *infoButton;
 }
 
 - (instancetype)initWithYPosition:(CGFloat)yPosition {
@@ -139,6 +141,7 @@
                 
                 [slider setValue:0 animated:iOSVersion < 7 ? NO : YES];
                 label.alpha = MAX(0.0, 1.0 - (slider.value * 3.5));
+                infoButton.alpha = MAX(0.0, 1.0 - (slider.value * 3.5));
             }
         }];
         
@@ -153,6 +156,12 @@
     
     label.alpha = MAX(0.0, 1.0 - (slider.value * 3.5));
     [self shimmering:1];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        infoButton = [[[self superview] subviews] objectAtIndex:1];
+    });
+    [infoButton setAlpha:MAX(0.0, 1.0 - (slider.value * 3.5))];
+    
 }
 
 - (void)shimmering:(uint8_t)command {
@@ -177,6 +186,7 @@
     
     [slider setValue:0];
     [label setAlpha:1.0];
+    [infoButton setAlpha:1.0];
     [self shimmering:0];
 }
 

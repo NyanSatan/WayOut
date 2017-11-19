@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ImageValidation.h"
-#import "CellsInitialization.h"
+#import "SettingsTableViewSingleton.h"
 
 @interface iOS6iPadSettingsView : UIView <UITableViewDelegate, UITableViewDataSource>
 

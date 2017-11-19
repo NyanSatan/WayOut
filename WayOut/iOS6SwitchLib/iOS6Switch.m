@@ -16,7 +16,7 @@
     
     UIView *track;
     UISlider *slider;
-    CALayer *bluePart;
+    CAGradientLayer *bluePart;
     uint8_t currentState;
 }
 
@@ -55,9 +55,11 @@
     track = [[UIView alloc] init];
     track.frame = CGRectMake(0, 0, baseImage.size.width*2, baseImage.size.height);
     track.backgroundColor = [UIColor colorWithRed:0.9353 green:0.935 blue:0.935 alpha:1.0];
-    bluePart = [CALayer layer];
+    bluePart = [CAGradientLayer layer];
+    bluePart.startPoint = CGPointMake(0.95, 0);
+    bluePart.endPoint = CGPointMake(1, 0);
     bluePart.frame = CGRectMake(0, 0, baseImage.size.width-15, baseImage.size.height);
-    bluePart.backgroundColor = [UIColor colorWithRed:0.02 green:0.498 blue:0.918 alpha:1.0].CGColor;
+    bluePart.colors = @[(id)[UIColor colorWithRed:0.02 green:0.498 blue:0.918 alpha:1.0].CGColor, (id)[UIColor colorWithRed:0.9353 green:0.935 blue:0.935 alpha:1.0].CGColor];
     [track.layer addSublayer:bluePart];
     [track.layer addSublayer:onLabel.layer];
     [track.layer addSublayer:offLabel.layer];

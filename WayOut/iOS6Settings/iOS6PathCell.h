@@ -10,6 +10,6 @@
 
 @interface iOS6PathCell : iOS6TableViewCell <UITextFieldDelegate>
 
-- (instancetype)initForPosition:(iOS6TableViewCellPosition)position withTableViewWidth:(CGFloat)width forSection:(NSInteger)section;
+- (instancetype)initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition forSection:(NSInteger)section;
 
 @end

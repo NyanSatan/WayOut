@@ -37,7 +37,7 @@
             description = @"Perhaps you're running it on simulator? Add x86_64 to set in AppDelegate";
             break;
     }
-       
+    
     self.view.layer.cornerRadius = 4.0f;
     self.view.layer.masksToBounds = YES;
     

@@ -18,6 +18,8 @@
 		2C4850AC1D3AA55C00B398EE /* WayOutLogo~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4850AA1D3AA55C00B398EE /* WayOutLogo~ipad.png */; };
 		2C4850AD1D3AA55C00B398EE /* WayOutLogo~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4850AB1D3AA55C00B398EE /* WayOutLogo~iphone.png */; };
 		2C48FFAE1D3D2E3400F6DA72 /* Linen-1024w-1366h@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C48FFAD1D3D2E3400F6DA72 /* Linen-1024w-1366h@2x~ipad.png */; };
+		2C4C10CC1FBCCA220039905B /* UIScrollerIndicatorDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C10CA1FBCCA220039905B /* UIScrollerIndicatorDefault.png */; };
+		2C4C10CD1FBCCA220039905B /* UIScrollerIndicatorDefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C10CB1FBCCA220039905B /* UIScrollerIndicatorDefault@2x.png */; };
 		2C4D103C1D2D6BDD00F74E80 /* NoSupportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D103B1D2D6BDD00F74E80 /* NoSupportViewController.m */; };
 		2C4D10401D2D6E7800F74E80 /* NoSupport@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D103E1D2D6E7800F74E80 /* NoSupport@2x~ipad.png */; };
 		2C4D10411D2D6E7800F74E80 /* NoSupport@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D103F1D2D6E7800F74E80 /* NoSupport@2x~iphone.png */; };
@@ -39,22 +41,12 @@
 		2C6EE7901F6D25710034D5D6 /* iOS6LockScreenBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7851F6D25710034D5D6 /* iOS6LockScreenBottomBar.m */; };
 		2C6EE7911F6D25710034D5D6 /* WellLock@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7861F6D25710034D5D6 /* WellLock@2x~ipad.png */; };
 		2C6EE7921F6D25710034D5D6 /* WellLock~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7871F6D25710034D5D6 /* WellLock~ipad.png */; };
-		2C6EE7BA1F6D25CB0034D5D6 /* CellAlone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7941F6D25CB0034D5D6 /* CellAlone.png */; };
-		2C6EE7BB1F6D25CB0034D5D6 /* CellAlone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7951F6D25CB0034D5D6 /* CellAlone@2x.png */; };
-		2C6EE7BC1F6D25CB0034D5D6 /* CellBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7961F6D25CB0034D5D6 /* CellBottom.png */; };
-		2C6EE7BD1F6D25CB0034D5D6 /* CellBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7971F6D25CB0034D5D6 /* CellBottom@2x.png */; };
-		2C6EE7BE1F6D25CB0034D5D6 /* CellMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7981F6D25CB0034D5D6 /* CellMiddle.png */; };
-		2C6EE7BF1F6D25CB0034D5D6 /* CellMiddle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7991F6D25CB0034D5D6 /* CellMiddle@2x.png */; };
-		2C6EE7C01F6D25CB0034D5D6 /* CellsInitialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE79B1F6D25CB0034D5D6 /* CellsInitialization.m */; };
-		2C6EE7C11F6D25CB0034D5D6 /* CellTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE79C1F6D25CB0034D5D6 /* CellTop.png */; };
-		2C6EE7C21F6D25CB0034D5D6 /* CellTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE79D1F6D25CB0034D5D6 /* CellTop@2x.png */; };
 		2C6EE7C31F6D25CB0034D5D6 /* iOS6DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE79F1F6D25CB0034D5D6 /* iOS6DetailCell.m */; };
 		2C6EE7C41F6D25CB0034D5D6 /* iOS6iPadSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7A11F6D25CB0034D5D6 /* iOS6iPadSettingsView.m */; };
 		2C6EE7C51F6D25CB0034D5D6 /* iOS6KloaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7A31F6D25CB0034D5D6 /* iOS6KloaderCell.m */; };
 		2C6EE7C61F6D25CB0034D5D6 /* iOS6PathCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7A51F6D25CB0034D5D6 /* iOS6PathCell.m */; };
 		2C6EE7C71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7A71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m */; };
 		2C6EE7C81F6D25CB0034D5D6 /* iOS6SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7A91F6D25CB0034D5D6 /* iOS6SettingsTableViewController.m */; };
-		2C6EE7C91F6D25CB0034D5D6 /* iOS6TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE7AB1F6D25CB0034D5D6 /* iOS6TableViewCell.m */; };
 		2C6EE7CA1F6D25CB0034D5D6 /* LinenSettings@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7AC1F6D25CB0034D5D6 /* LinenSettings@2x~ipad.png */; };
 		2C6EE7CB1F6D25CB0034D5D6 /* LinenSettings~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7AD1F6D25CB0034D5D6 /* LinenSettings~ipad.png */; };
 		2C6EE7CC1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7AE1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentBackground.png */; };
@@ -82,6 +74,7 @@
 		2C6EE7F81F6D286E0034D5D6 /* icon6@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7F41F6D286E0034D5D6 /* icon6@2x~ipad.png */; };
 		2C6EE7F91F6D286E0034D5D6 /* icon6~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7F51F6D286E0034D5D6 /* icon6~ipad.png */; };
 		2C6EE7FB1F6D29740034D5D6 /* icon7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C6EE7FA1F6D29740034D5D6 /* icon7.png */; };
+		2C75602B1FBE21D500215EF1 /* Linen-375w-812h@3x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C75602A1FBE21D400215EF1 /* Linen-375w-812h@3x~iphone.png */; };
 		2C882B4F1D85A34400EB78C3 /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2C882B4E1D85A34400EB78C3 /* MyriadPro-Semibold.otf */; };
 		2C8B802D1E1EC7D400C8D90E /* Corners_Black_Left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B802B1E1EC7D400C8D90E /* Corners_Black_Left@2x.png */; };
 		2C8B802E1E1EC7D400C8D90E /* Corners_Black_Right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C8B802C1E1EC7D400C8D90E /* Corners_Black_Right@2x.png */; };
@@ -94,7 +87,7 @@
 		303AC0F61F3A0E9500B3E800 /* 4smulti_kloader in Resources */ = {isa = PBXBuildFile; fileRef = 303AC0F51F3A0E9500B3E800 /* 4smulti_kloader */; };
 		305EFC841F28F40400879872 /* kloader in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC811F28F40400879872 /* kloader */; };
 		305EFC851F28F40400879872 /* multi_kloader in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC821F28F40400879872 /* multi_kloader */; };
-		305EFC861F28F40400879872 /* runasroot in Resources */ = {isa = PBXBuildFile; fileRef = 305EFC831F28F40400879872 /* runasroot */; };
+		3069A1E51FB22D1400CD19DE /* SettingsTableViewSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069A1E41FB22D1400CD19DE /* SettingsTableViewSingleton.m */; };
 		307D8BE41F29B9CA004EACF4 /* iOS6AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 307D8BD91F29B9CA004EACF4 /* iOS6AlertView.m */; };
 		307D8BE51F29B9CA004EACF4 /* UIAlertViewDimming.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDA1F29B9CA004EACF4 /* UIAlertViewDimming.png */; };
 		307D8BE61F29B9CA004EACF4 /* UIAlertViewDimming@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BDB1F29B9CA004EACF4 /* UIAlertViewDimming@2x.png */; };
@@ -115,6 +108,16 @@
 		307D8BFF1F29B9DE004EACF4 /* UISwitchThumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF61F29B9DE004EACF4 /* UISwitchThumb@2x.png */; };
 		307D8C001F29B9DE004EACF4 /* UISwitchThumbPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF71F29B9DE004EACF4 /* UISwitchThumbPressed.png */; };
 		307D8C011F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 307D8BF81F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png */; };
+		30CD68B41FBC48C70059EB65 /* CellAlone.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68A81FBC48C70059EB65 /* CellAlone.png */; };
+		30CD68B51FBC48C70059EB65 /* CellAlone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68A91FBC48C70059EB65 /* CellAlone@2x.png */; };
+		30CD68B61FBC48C70059EB65 /* CellBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AA1FBC48C70059EB65 /* CellBottom.png */; };
+		30CD68B71FBC48C70059EB65 /* CellBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AB1FBC48C70059EB65 /* CellBottom@2x.png */; };
+		30CD68B81FBC48C70059EB65 /* CellMiddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AC1FBC48C70059EB65 /* CellMiddle.png */; };
+		30CD68B91FBC48C70059EB65 /* CellMiddle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AD1FBC48C70059EB65 /* CellMiddle@2x.png */; };
+		30CD68BA1FBC48C70059EB65 /* CellTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AE1FBC48C70059EB65 /* CellTop.png */; };
+		30CD68BB1FBC48C70059EB65 /* CellTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30CD68AF1FBC48C70059EB65 /* CellTop@2x.png */; };
+		30CD68BC1FBC48C70059EB65 /* iOS6TableCellImageSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CD68B11FBC48C70059EB65 /* iOS6TableCellImageSingleton.m */; };
+		30CD68BD1FBC48C70059EB65 /* iOS6TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CD68B31FBC48C70059EB65 /* iOS6TableViewCell.m */; };
 		30CFE4E21EC1B3CA00882B6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CFE4E11EC1B3CA00882B6F /* ViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +133,8 @@
 		2C4850AA1D3AA55C00B398EE /* WayOutLogo~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WayOutLogo~ipad.png"; sourceTree = "<group>"; };
 		2C4850AB1D3AA55C00B398EE /* WayOutLogo~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WayOutLogo~iphone.png"; sourceTree = "<group>"; };
 		2C48FFAD1D3D2E3400F6DA72 /* Linen-1024w-1366h@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen-1024w-1366h@2x~ipad.png"; sourceTree = "<group>"; };
+		2C4C10CA1FBCCA220039905B /* UIScrollerIndicatorDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIScrollerIndicatorDefault.png; path = iOS6Settings/UIScrollerIndicatorDefault.png; sourceTree = "<group>"; };
+		2C4C10CB1FBCCA220039905B /* UIScrollerIndicatorDefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UIScrollerIndicatorDefault@2x.png"; path = "iOS6Settings/UIScrollerIndicatorDefault@2x.png"; sourceTree = "<group>"; };
 		2C4D103B1D2D6BDD00F74E80 /* NoSupportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoSupportViewController.m; sourceTree = "<group>"; };
 		2C4D103D1D2D6BFA00F74E80 /* NoSupportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoSupportViewController.h; sourceTree = "<group>"; };
 		2C4D103E1D2D6E7800F74E80 /* NoSupport@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NoSupport@2x~ipad.png"; sourceTree = "<group>"; };
@@ -157,16 +162,6 @@
 		2C6EE7851F6D25710034D5D6 /* iOS6LockScreenBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6LockScreenBottomBar.m; path = iOS6LockScreenBottomBarLib/iOS6LockScreenBottomBar.m; sourceTree = "<group>"; };
 		2C6EE7861F6D25710034D5D6 /* WellLock@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WellLock@2x~ipad.png"; path = "iOS6LockScreenBottomBarLib/WellLock@2x~ipad.png"; sourceTree = "<group>"; };
 		2C6EE7871F6D25710034D5D6 /* WellLock~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "WellLock~ipad.png"; path = "iOS6LockScreenBottomBarLib/WellLock~ipad.png"; sourceTree = "<group>"; };
-		2C6EE7941F6D25CB0034D5D6 /* CellAlone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellAlone.png; path = iOS6Settings/CellAlone.png; sourceTree = "<group>"; };
-		2C6EE7951F6D25CB0034D5D6 /* CellAlone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellAlone@2x.png"; path = "iOS6Settings/CellAlone@2x.png"; sourceTree = "<group>"; };
-		2C6EE7961F6D25CB0034D5D6 /* CellBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellBottom.png; path = iOS6Settings/CellBottom.png; sourceTree = "<group>"; };
-		2C6EE7971F6D25CB0034D5D6 /* CellBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellBottom@2x.png"; path = "iOS6Settings/CellBottom@2x.png"; sourceTree = "<group>"; };
-		2C6EE7981F6D25CB0034D5D6 /* CellMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellMiddle.png; path = iOS6Settings/CellMiddle.png; sourceTree = "<group>"; };
-		2C6EE7991F6D25CB0034D5D6 /* CellMiddle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellMiddle@2x.png"; path = "iOS6Settings/CellMiddle@2x.png"; sourceTree = "<group>"; };
-		2C6EE79A1F6D25CB0034D5D6 /* CellsInitialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellsInitialization.h; path = iOS6Settings/CellsInitialization.h; sourceTree = "<group>"; };
-		2C6EE79B1F6D25CB0034D5D6 /* CellsInitialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellsInitialization.m; path = iOS6Settings/CellsInitialization.m; sourceTree = "<group>"; };
-		2C6EE79C1F6D25CB0034D5D6 /* CellTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellTop.png; path = iOS6Settings/CellTop.png; sourceTree = "<group>"; };
-		2C6EE79D1F6D25CB0034D5D6 /* CellTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellTop@2x.png"; path = "iOS6Settings/CellTop@2x.png"; sourceTree = "<group>"; };
 		2C6EE79E1F6D25CB0034D5D6 /* iOS6DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6DetailCell.h; path = iOS6Settings/iOS6DetailCell.h; sourceTree = "<group>"; };
 		2C6EE79F1F6D25CB0034D5D6 /* iOS6DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6DetailCell.m; path = iOS6Settings/iOS6DetailCell.m; sourceTree = "<group>"; };
 		2C6EE7A01F6D25CB0034D5D6 /* iOS6iPadSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6iPadSettingsView.h; path = iOS6Settings/iOS6iPadSettingsView.h; sourceTree = "<group>"; };
@@ -179,8 +174,6 @@
 		2C6EE7A71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6SettingsNavigationController.m; path = iOS6Settings/iOS6SettingsNavigationController.m; sourceTree = "<group>"; };
 		2C6EE7A81F6D25CB0034D5D6 /* iOS6SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6SettingsTableViewController.h; path = iOS6Settings/iOS6SettingsTableViewController.h; sourceTree = "<group>"; };
 		2C6EE7A91F6D25CB0034D5D6 /* iOS6SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6SettingsTableViewController.m; path = iOS6Settings/iOS6SettingsTableViewController.m; sourceTree = "<group>"; };
-		2C6EE7AA1F6D25CB0034D5D6 /* iOS6TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6TableViewCell.h; path = iOS6Settings/iOS6TableViewCell.h; sourceTree = "<group>"; };
-		2C6EE7AB1F6D25CB0034D5D6 /* iOS6TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6TableViewCell.m; path = iOS6Settings/iOS6TableViewCell.m; sourceTree = "<group>"; };
 		2C6EE7AC1F6D25CB0034D5D6 /* LinenSettings@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LinenSettings@2x~ipad.png"; path = "iOS6Settings/LinenSettings@2x~ipad.png"; sourceTree = "<group>"; };
 		2C6EE7AD1F6D25CB0034D5D6 /* LinenSettings~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LinenSettings~ipad.png"; path = "iOS6Settings/LinenSettings~ipad.png"; sourceTree = "<group>"; };
 		2C6EE7AE1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UINavigationBarBlackTranslucentBackground.png; path = iOS6Settings/UINavigationBarBlackTranslucentBackground.png; sourceTree = "<group>"; };
@@ -216,6 +209,7 @@
 		2C6EE7F41F6D286E0034D5D6 /* icon6@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon6@2x~ipad.png"; path = "iOS6Icons/icon6@2x~ipad.png"; sourceTree = "<group>"; };
 		2C6EE7F51F6D286E0034D5D6 /* icon6~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon6~ipad.png"; path = "iOS6Icons/icon6~ipad.png"; sourceTree = "<group>"; };
 		2C6EE7FA1F6D29740034D5D6 /* icon7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon7.png; sourceTree = "<group>"; };
+		2C75602A1FBE21D400215EF1 /* Linen-375w-812h@3x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Linen-375w-812h@3x~iphone.png"; sourceTree = "<group>"; };
 		2C882B4E1D85A34400EB78C3 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
 		2C8B802B1E1EC7D400C8D90E /* Corners_Black_Left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Corners_Black_Left@2x.png"; sourceTree = "<group>"; };
 		2C8B802C1E1EC7D400C8D90E /* Corners_Black_Right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Corners_Black_Right@2x.png"; sourceTree = "<group>"; };
@@ -229,7 +223,8 @@
 		303AC0F51F3A0E9500B3E800 /* 4smulti_kloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = 4smulti_kloader; sourceTree = "<group>"; };
 		305EFC811F28F40400879872 /* kloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kloader; sourceTree = "<group>"; };
 		305EFC821F28F40400879872 /* multi_kloader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = multi_kloader; sourceTree = "<group>"; };
-		305EFC831F28F40400879872 /* runasroot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = runasroot; sourceTree = "<group>"; };
+		3069A1E31FB22D1400CD19DE /* SettingsTableViewSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewSingleton.h; sourceTree = "<group>"; };
+		3069A1E41FB22D1400CD19DE /* SettingsTableViewSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewSingleton.m; sourceTree = "<group>"; };
 		307D8BD81F29B9CA004EACF4 /* iOS6AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6AlertView.h; path = iOS6AlertViewLib/iOS6AlertView.h; sourceTree = "<group>"; };
 		307D8BD91F29B9CA004EACF4 /* iOS6AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6AlertView.m; path = iOS6AlertViewLib/iOS6AlertView.m; sourceTree = "<group>"; };
 		307D8BDA1F29B9CA004EACF4 /* UIAlertViewDimming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UIAlertViewDimming.png; path = iOS6AlertViewLib/UIAlertViewDimming.png; sourceTree = "<group>"; };
@@ -252,6 +247,18 @@
 		307D8BF61F29B9DE004EACF4 /* UISwitchThumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchThumb@2x.png"; path = "iOS6SwitchLib/UISwitchThumb@2x.png"; sourceTree = "<group>"; };
 		307D8BF71F29B9DE004EACF4 /* UISwitchThumbPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UISwitchThumbPressed.png; path = iOS6SwitchLib/UISwitchThumbPressed.png; sourceTree = "<group>"; };
 		307D8BF81F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UISwitchThumbPressed@2x.png"; path = "iOS6SwitchLib/UISwitchThumbPressed@2x.png"; sourceTree = "<group>"; };
+		30CD68A81FBC48C70059EB65 /* CellAlone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellAlone.png; path = iOS6Settings/iOS6TableCellLib/CellAlone.png; sourceTree = "<group>"; };
+		30CD68A91FBC48C70059EB65 /* CellAlone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellAlone@2x.png"; path = "iOS6Settings/iOS6TableCellLib/CellAlone@2x.png"; sourceTree = "<group>"; };
+		30CD68AA1FBC48C70059EB65 /* CellBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellBottom.png; path = iOS6Settings/iOS6TableCellLib/CellBottom.png; sourceTree = "<group>"; };
+		30CD68AB1FBC48C70059EB65 /* CellBottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellBottom@2x.png"; path = "iOS6Settings/iOS6TableCellLib/CellBottom@2x.png"; sourceTree = "<group>"; };
+		30CD68AC1FBC48C70059EB65 /* CellMiddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellMiddle.png; path = iOS6Settings/iOS6TableCellLib/CellMiddle.png; sourceTree = "<group>"; };
+		30CD68AD1FBC48C70059EB65 /* CellMiddle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellMiddle@2x.png"; path = "iOS6Settings/iOS6TableCellLib/CellMiddle@2x.png"; sourceTree = "<group>"; };
+		30CD68AE1FBC48C70059EB65 /* CellTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellTop.png; path = iOS6Settings/iOS6TableCellLib/CellTop.png; sourceTree = "<group>"; };
+		30CD68AF1FBC48C70059EB65 /* CellTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CellTop@2x.png"; path = "iOS6Settings/iOS6TableCellLib/CellTop@2x.png"; sourceTree = "<group>"; };
+		30CD68B01FBC48C70059EB65 /* iOS6TableCellImageSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6TableCellImageSingleton.h; path = iOS6Settings/iOS6TableCellLib/iOS6TableCellImageSingleton.h; sourceTree = "<group>"; };
+		30CD68B11FBC48C70059EB65 /* iOS6TableCellImageSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6TableCellImageSingleton.m; path = iOS6Settings/iOS6TableCellLib/iOS6TableCellImageSingleton.m; sourceTree = "<group>"; };
+		30CD68B21FBC48C70059EB65 /* iOS6TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iOS6TableViewCell.h; path = iOS6Settings/iOS6TableCellLib/iOS6TableViewCell.h; sourceTree = "<group>"; };
+		30CD68B31FBC48C70059EB65 /* iOS6TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iOS6TableViewCell.m; path = iOS6Settings/iOS6TableCellLib/iOS6TableViewCell.m; sourceTree = "<group>"; };
 		30CFE4E01EC1B3CA00882B6F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		30CFE4E11EC1B3CA00882B6F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,13 +296,14 @@
 				301926FD1F6EB86900EC8D48 /* kloader_ios5 */,
 				305EFC821F28F40400879872 /* multi_kloader */,
 				303AC0F51F3A0E9500B3E800 /* 4smulti_kloader */,
-				305EFC831F28F40400879872 /* runasroot */,
 				2C5FD1091D04976F00F8AF9A /* AppDelegate.h */,
 				2C5FD10A1D04976F00F8AF9A /* AppDelegate.m */,
 				2C93339D1DBE0B83009D521A /* ImageValidation.h */,
 				2C93339B1DBE0B56009D521A /* ImageValidation.m */,
 				2CDD0C671F4486AD0035CB9B /* LoadingView.h */,
 				2CDD0C681F4486AD0035CB9B /* LoadingView.m */,
+				3069A1E31FB22D1400CD19DE /* SettingsTableViewSingleton.h */,
+				3069A1E41FB22D1400CD19DE /* SettingsTableViewSingleton.m */,
 				2CC9EB8C1F40C2B100D9E6CC /* iOS6LockScreenBottomBarLib */,
 			);
 			name = Common;
@@ -343,8 +351,8 @@
 		2C5FD1231D04A19500F8AF9A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C6EE7FA1F6D29740034D5D6 /* icon7.png */,
 				2C6EE7F11F6D282C0034D5D6 /* Icons for iOS 6 */,
+				2C6EE7FA1F6D29740034D5D6 /* icon7.png */,
 				2C6643881E2189A300625250 /* Corners_Black_Left.png */,
 				2C6643891E2189A300625250 /* Corners_Black_Right.png */,
 				2C8B802B1E1EC7D400C8D90E /* Corners_Black_Left@2x.png */,
@@ -361,10 +369,11 @@
 				2C5FD12C1D04A44F00F8AF9A /* Linen~iphone.png */,
 				2C5FD12B1D04A44F00F8AF9A /* Linen@2x~iphone.png */,
 				2C167D011D0762FC00E93D80 /* Linen-568h@2x.png */,
-				2C35D8641D3279CB00F4B6EC /* Linen-375w-667h@2x~iphone.png */,
-				2C35D8651D3279CB00F4B6EC /* Linen-414w-736h@3x~iphone.png */,
 				2C21C6551D0C97D7000F4E58 /* Linen~ipad.png */,
 				2C21C6541D0C97D7000F4E58 /* Linen@2x~ipad.png */,
+				2C35D8641D3279CB00F4B6EC /* Linen-375w-667h@2x~iphone.png */,
+				2C35D8651D3279CB00F4B6EC /* Linen-414w-736h@3x~iphone.png */,
+				2C75602A1FBE21D400215EF1 /* Linen-375w-812h@3x~iphone.png */,
 				2C48FFAD1D3D2E3400F6DA72 /* Linen-1024w-1366h@2x~ipad.png */,
 				2C35D86A1D329C4400F4B6EC /* LinenTiled@2x.png */,
 			);
@@ -391,14 +400,8 @@
 		2C6EE7F01F6D28080034D5D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C6EE7941F6D25CB0034D5D6 /* CellAlone.png */,
-				2C6EE7951F6D25CB0034D5D6 /* CellAlone@2x.png */,
-				2C6EE7961F6D25CB0034D5D6 /* CellBottom.png */,
-				2C6EE7971F6D25CB0034D5D6 /* CellBottom@2x.png */,
-				2C6EE7981F6D25CB0034D5D6 /* CellMiddle.png */,
-				2C6EE7991F6D25CB0034D5D6 /* CellMiddle@2x.png */,
-				2C6EE79C1F6D25CB0034D5D6 /* CellTop.png */,
-				2C6EE79D1F6D25CB0034D5D6 /* CellTop@2x.png */,
+				2C4C10CA1FBCCA220039905B /* UIScrollerIndicatorDefault.png */,
+				2C4C10CB1FBCCA220039905B /* UIScrollerIndicatorDefault@2x.png */,
 				2C6EE7AC1F6D25CB0034D5D6 /* LinenSettings@2x~ipad.png */,
 				2C6EE7AD1F6D25CB0034D5D6 /* LinenSettings~ipad.png */,
 				2C6EE7AE1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentBackground.png */,
@@ -431,8 +434,7 @@
 		2CC402141F580E0800EC283F /* iOS6Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2C6EE79A1F6D25CB0034D5D6 /* CellsInitialization.h */,
-				2C6EE79B1F6D25CB0034D5D6 /* CellsInitialization.m */,
+				30CD68A71FBC48B00059EB65 /* iOS6TableCellLib */,
 				2C6EE79E1F6D25CB0034D5D6 /* iOS6DetailCell.h */,
 				2C6EE79F1F6D25CB0034D5D6 /* iOS6DetailCell.m */,
 				2C6EE7A21F6D25CB0034D5D6 /* iOS6KloaderCell.h */,
@@ -441,12 +443,10 @@
 				2C6EE7A51F6D25CB0034D5D6 /* iOS6PathCell.m */,
 				2C6EE7A01F6D25CB0034D5D6 /* iOS6iPadSettingsView.h */,
 				2C6EE7A11F6D25CB0034D5D6 /* iOS6iPadSettingsView.m */,
-				2C6EE7A61F6D25CB0034D5D6 /* iOS6SettingsNavigationController.h */,
-				2C6EE7A71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m */,
 				2C6EE7A81F6D25CB0034D5D6 /* iOS6SettingsTableViewController.h */,
 				2C6EE7A91F6D25CB0034D5D6 /* iOS6SettingsTableViewController.m */,
-				2C6EE7AA1F6D25CB0034D5D6 /* iOS6TableViewCell.h */,
-				2C6EE7AB1F6D25CB0034D5D6 /* iOS6TableViewCell.m */,
+				2C6EE7A61F6D25CB0034D5D6 /* iOS6SettingsNavigationController.h */,
+				2C6EE7A71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m */,
 				2C6EE7F01F6D28080034D5D6 /* Resources */,
 			);
 			name = iOS6Settings;
@@ -511,6 +511,25 @@
 				30CFB86A1F63116A00CFAD53 /* Resources */,
 			);
 			name = iOS6AlertViewLib;
+			sourceTree = "<group>";
+		};
+		30CD68A71FBC48B00059EB65 /* iOS6TableCellLib */ = {
+			isa = PBXGroup;
+			children = (
+				30CD68A81FBC48C70059EB65 /* CellAlone.png */,
+				30CD68A91FBC48C70059EB65 /* CellAlone@2x.png */,
+				30CD68AA1FBC48C70059EB65 /* CellBottom.png */,
+				30CD68AB1FBC48C70059EB65 /* CellBottom@2x.png */,
+				30CD68AC1FBC48C70059EB65 /* CellMiddle.png */,
+				30CD68AD1FBC48C70059EB65 /* CellMiddle@2x.png */,
+				30CD68AE1FBC48C70059EB65 /* CellTop.png */,
+				30CD68AF1FBC48C70059EB65 /* CellTop@2x.png */,
+				30CD68B01FBC48C70059EB65 /* iOS6TableCellImageSingleton.h */,
+				30CD68B11FBC48C70059EB65 /* iOS6TableCellImageSingleton.m */,
+				30CD68B21FBC48C70059EB65 /* iOS6TableViewCell.h */,
+				30CD68B31FBC48C70059EB65 /* iOS6TableViewCell.m */,
+			);
+			name = iOS6TableCellLib;
 			sourceTree = "<group>";
 		};
 		30CFB86A1F63116A00CFAD53 /* Resources */ = {
@@ -608,50 +627,51 @@
 				2C21C6581D0C97D7000F4E58 /* Linen@2x~ipad.png in Resources */,
 				307D8BE91F29B9CA004EACF4 /* UIPopupAlertSheetButton.png in Resources */,
 				307D8BE51F29B9CA004EACF4 /* UIAlertViewDimming.png in Resources */,
-				2C6EE7C21F6D25CB0034D5D6 /* CellTop@2x.png in Resources */,
 				2C4850AD1D3AA55C00B398EE /* WayOutLogo~iphone.png in Resources */,
 				2C66438B1E2189A300625250 /* Corners_Black_Right.png in Resources */,
 				307D8BFA1F29B9DE004EACF4 /* UISwitchShapeMask.png in Resources */,
 				2C167D021D0762FC00E93D80 /* Linen-568h@2x.png in Resources */,
 				2C21C6591D0C97D7000F4E58 /* Linen~ipad.png in Resources */,
 				307D8C011F29B9DE004EACF4 /* UISwitchThumbPressed@2x.png in Resources */,
-				2C6EE7BE1F6D25CB0034D5D6 /* CellMiddle.png in Resources */,
+				30CD68B61FBC48C70059EB65 /* CellBottom.png in Resources */,
+				30CD68B51FBC48C70059EB65 /* CellAlone@2x.png in Resources */,
 				2C6EE78C1F6D25710034D5D6 /* bottombarknobgray.png in Resources */,
-				305EFC861F28F40400879872 /* runasroot in Resources */,
+				2C4C10CD1FBCCA220039905B /* UIScrollerIndicatorDefault@2x.png in Resources */,
 				2C6EE7921F6D25710034D5D6 /* WellLock~ipad.png in Resources */,
-				2C6EE7BA1F6D25CB0034D5D6 /* CellAlone.png in Resources */,
 				2C882B4F1D85A34400EB78C3 /* MyriadPro-Semibold.otf in Resources */,
-				2C6EE7BF1F6D25CB0034D5D6 /* CellMiddle@2x.png in Resources */,
 				303AC0F61F3A0E9500B3E800 /* 4smulti_kloader in Resources */,
 				307D8BEE1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton@2x.png in Resources */,
 				2C6EE78B1F6D25710034D5D6 /* bottombarbkgnd~ipad.png in Resources */,
+				30CD68BB1FBC48C70059EB65 /* CellTop@2x.png in Resources */,
 				2C6EE7D71F6D25CB0034D5D6 /* UIScrollerIndicatorBlack@2x.png in Resources */,
 				2C6EE7D01F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentRightCorner.png in Resources */,
+				2C75602B1FBE21D500215EF1 /* Linen-375w-812h@3x~iphone.png in Resources */,
 				2C6EE7F91F6D286E0034D5D6 /* icon6~ipad.png in Resources */,
 				2C8B802D1E1EC7D400C8D90E /* Corners_Black_Left@2x.png in Resources */,
+				30CD68B71FBC48C70059EB65 /* CellBottom@2x.png in Resources */,
 				2C6EE7F61F6D286E0034D5D6 /* icon6.png in Resources */,
 				307D8BEC1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress@2x.png in Resources */,
 				2C6EE7CA1F6D25CB0034D5D6 /* LinenSettings@2x~ipad.png in Resources */,
 				2C6EE7D31F6D25CB0034D5D6 /* UINavigationBarDoneButtonDark@2x.png in Resources */,
 				307D8BEB1F29B9CA004EACF4 /* UIPopupAlertSheetButtonPress.png in Resources */,
 				2C6EE7CE1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentLeftCorner.png in Resources */,
+				30CD68B81FBC48C70059EB65 /* CellMiddle.png in Resources */,
 				307D8BFD1F29B9DE004EACF4 /* UISwitchShapeShadow@2x.png in Resources */,
 				307D8BE61F29B9CA004EACF4 /* UIAlertViewDimming@2x.png in Resources */,
 				2C6EE7F81F6D286E0034D5D6 /* icon6@2x~ipad.png in Resources */,
-				2C6EE7C11F6D25CB0034D5D6 /* CellTop.png in Resources */,
 				307D8BEA1F29B9CA004EACF4 /* UIPopupAlertSheetButton@2x.png in Resources */,
 				307D8BED1F29B9CA004EACF4 /* UIPopupAlertSheetDefaultButton.png in Resources */,
 				2C6EE7D41F6D25CB0034D5D6 /* UINavigationBarShadow.png in Resources */,
 				2C5FD1401D04B34600F8AF9A /* InfoButton.png in Resources */,
 				2C6EE7911F6D25710034D5D6 /* WellLock@2x~ipad.png in Resources */,
-				2C6EE7BD1F6D25CB0034D5D6 /* CellBottom@2x.png in Resources */,
 				2C4D10401D2D6E7800F74E80 /* NoSupport@2x~ipad.png in Resources */,
+				2C4C10CC1FBCCA220039905B /* UIScrollerIndicatorDefault.png in Resources */,
 				2C5FD12E1D04A44F00F8AF9A /* Linen@2x~iphone.png in Resources */,
 				2C6EE7CF1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentLeftCorner@2x.png in Resources */,
 				2C6EE7D11F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentRightCorner@2x.png in Resources */,
 				30194E501F6E6D31004CF4C7 /* asu_pid.entitlements in Resources */,
+				30CD68B91FBC48C70059EB65 /* CellMiddle@2x.png in Resources */,
 				307D8BFC1F29B9DE004EACF4 /* UISwitchShapeShadow.png in Resources */,
-				2C6EE7BC1F6D25CB0034D5D6 /* CellBottom.png in Resources */,
 				307D8C001F29B9DE004EACF4 /* UISwitchThumbPressed.png in Resources */,
 				2C5FD12F1D04A44F00F8AF9A /* Linen~iphone.png in Resources */,
 				307D8BFF1F29B9DE004EACF4 /* UISwitchThumb@2x.png in Resources */,
@@ -668,18 +688,19 @@
 				2C4850AC1D3AA55C00B398EE /* WayOutLogo~ipad.png in Resources */,
 				2C6EE7D21F6D25CB0034D5D6 /* UINavigationBarDoneButtonDark.png in Resources */,
 				2C6EE7D51F6D25CB0034D5D6 /* UINavigationBarShadow@2x.png in Resources */,
+				30CD68B41FBC48C70059EB65 /* CellAlone.png in Resources */,
 				2C6EE7D61F6D25CB0034D5D6 /* UIScrollerIndicatorBlack.png in Resources */,
 				2C6EE7891F6D25710034D5D6 /* bottombarbkgnd@2x.png in Resources */,
 				307D8BFE1F29B9DE004EACF4 /* UISwitchThumb.png in Resources */,
 				2C66438A1E2189A300625250 /* Corners_Black_Left.png in Resources */,
 				2C35D86B1D329C4400F4B6EC /* LinenTiled@2x.png in Resources */,
 				2C4850A91D3AA42000B398EE /* WayOutLogo@2x~iphone.png in Resources */,
+				30CD68BA1FBC48C70059EB65 /* CellTop.png in Resources */,
 				2C6EE7FB1F6D29740034D5D6 /* icon7.png in Resources */,
 				2C6EE78D1F6D25710034D5D6 /* bottombarknobgray@2x.png in Resources */,
 				2C6EE78F1F6D25710034D5D6 /* bottombarlocktextmask@2x.png in Resources */,
 				307D8BE71F29B9CA004EACF4 /* UIPopupAlertBackground.png in Resources */,
 				301926FE1F6EB86900EC8D48 /* kloader_ios5 in Resources */,
-				2C6EE7BB1F6D25CB0034D5D6 /* CellAlone@2x.png in Resources */,
 				2C8B802E1E1EC7D400C8D90E /* Corners_Black_Right@2x.png in Resources */,
 				2C6EE7881F6D25710034D5D6 /* bottombarbkgnd.png in Resources */,
 				2C6EE7CC1F6D25CB0034D5D6 /* UINavigationBarBlackTranslucentBackground.png in Resources */,
@@ -697,24 +718,25 @@
 			files = (
 				2C6EE7EE1F6D271B0034D5D6 /* SettingsViewControllerForiOS6.m in Sources */,
 				2C93339C1DBE0B56009D521A /* ImageValidation.m in Sources */,
+				3069A1E51FB22D1400CD19DE /* SettingsTableViewSingleton.m in Sources */,
 				2CDD0C691F4486AD0035CB9B /* LoadingView.m in Sources */,
 				2C4D103C1D2D6BDD00F74E80 /* NoSupportViewController.m in Sources */,
 				2C5FD1081D04976F00F8AF9A /* main.m in Sources */,
 				2C6EE7C71F6D25CB0034D5D6 /* iOS6SettingsNavigationController.m in Sources */,
 				2C6EE7EA1F6D271B0034D5D6 /* iPadSettingsViewForiOS6.m in Sources */,
 				2C6EE7ED1F6D271B0034D5D6 /* SettingsNavigationController.m in Sources */,
-				2C6EE7C01F6D25CB0034D5D6 /* CellsInitialization.m in Sources */,
 				2C6EE7EC1F6D271B0034D5D6 /* PathTableViewCell.m in Sources */,
 				2C6EE7E91F6D271B0034D5D6 /* DetailTableViewCell.m in Sources */,
 				2C6EE7C61F6D25CB0034D5D6 /* iOS6PathCell.m in Sources */,
+				30CD68BC1FBC48C70059EB65 /* iOS6TableCellImageSingleton.m in Sources */,
 				2C6EE7C51F6D25CB0034D5D6 /* iOS6KloaderCell.m in Sources */,
 				2C6EE7C41F6D25CB0034D5D6 /* iOS6iPadSettingsView.m in Sources */,
 				2C6EE7901F6D25710034D5D6 /* iOS6LockScreenBottomBar.m in Sources */,
 				2C8B802F1E1ED5EE00C8D90E /* AppDelegate.m in Sources */,
 				30CFE4E21EC1B3CA00882B6F /* ViewController.m in Sources */,
-				2C6EE7C91F6D25CB0034D5D6 /* iOS6TableViewCell.m in Sources */,
 				2C6EE7C81F6D25CB0034D5D6 /* iOS6SettingsTableViewController.m in Sources */,
 				2C6EE7EB1F6D271B0034D5D6 /* KloaderTableViewCell.m in Sources */,
+				30CD68BD1FBC48C70059EB65 /* iOS6TableViewCell.m in Sources */,
 				2C6EE7C31F6D25CB0034D5D6 /* iOS6DetailCell.m in Sources */,
 				2C6EE7EF1F6D271B0034D5D6 /* ViewControllerForiOS6.m in Sources */,
 				307D8BF91F29B9DE004EACF4 /* iOS6Switch.m in Sources */,
@@ -814,12 +836,12 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_ENTITLEMENTS = WayOut/asu_pid.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				INFOPLIST_FILE = WayOut/Info.plist;
-				INSTALL_MODE_FLAG = "u+w,go-w,a+rX+s";
+				INSTALL_MODE_FLAG = "u+w,go-w,a+rX";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -836,12 +858,12 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				INFOPLIST_FILE = WayOut/Info.plist;
-				INSTALL_MODE_FLAG = "u+w,go-w,a+rX+s";
+				INSTALL_MODE_FLAG = "u+w,go-w,a+rX";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;

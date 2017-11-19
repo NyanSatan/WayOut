@@ -25,6 +25,8 @@
         xPosition = 421;
     }
     
+    [self.textLabel setText:@"multi_kloader"];
+    
     UISwitch *kloaderSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(xPosition, 9, 0, 0)];
     [kloaderSwitch setOn:[ImageValidation isMultiKloaderNeeded]];
     [kloaderSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];

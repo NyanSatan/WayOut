@@ -22,8 +22,16 @@ int main(int argc, char *argv[]) {
         printf("This must be run as root!\n");
         return 0;
     }
-
+    
+    if (strcmp(argv[1], "-b") == 0) {
+        system(argv[2]);
+    }
+    
     if (strcmp(argv[1], "-s") == 0) {
+        system(argv[2]);
+    }
+
+    if (strcmp(argv[1], "-m") == 0) {
         
         char *root_domain = "/private/var/root/Library/Preferences/com.nyansatan.WayOut.plist";
         
@@ -47,9 +55,6 @@ int main(int argc, char *argv[]) {
             printf("Couldn't move user defaults!\n");
         }
         
-    } else {
-        
-        system(argv[1]);
     }
     
     return 0;

@@ -11,6 +11,8 @@
 #import <fcntl.h>
 #import <unistd.h>
 #import <dlfcn.h>
+#import <mach-o/loader.h>
+#import <mach-o/fat.h>
 
 @interface ImageValidation : NSObject;
 
@@ -24,6 +26,7 @@ typedef NS_ENUM(NSInteger, iBootInfoType) {
 + (BOOL)isImageExistAtPath:(NSString*)path;
 + (BOOL)isARMImageValidAtPath:(NSString*)path;
 + (BOOL)isIMG3ImageValidAtPath:(NSString*)path;
++ (void)executeScript;
 + (void)bootX;
 + (void)generateDefaults;
 + (BOOL)doesBelongToS5L8940Family;
@@ -31,5 +34,6 @@ typedef NS_ENUM(NSInteger, iBootInfoType) {
 + (NSString*)getiBootInfoForImage:(NSInteger)imageNumber ofType:(iBootInfoType)infoType;
 + (NSString*)getiBootTypeAtPath:(NSString*)path isIMG3:(BOOL)isIMG3;
 + (NSString*)getiBootVersionAtPath:(NSString*)path isIMG3:(BOOL)isIMG3;
++ (NSString*)getScriptType;
 
 @end

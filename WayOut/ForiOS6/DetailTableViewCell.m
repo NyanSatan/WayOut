@@ -48,7 +48,13 @@
     
     switch (cellType) {
         case DetailTableViewCellTypeType:
-            self.detailTextLabel.text = [ImageValidation getiBootInfoForImage:sectionNumber ofType:iBootType];
+            
+            if (sectionNumber != 3) {
+                self.detailTextLabel.text = [ImageValidation getiBootInfoForImage:sectionNumber ofType:iBootType];
+            } else {
+                self.detailTextLabel.text = [ImageValidation getScriptType];
+            }
+            
             break;
             
         case DetailTableViewCellTypeVersion:

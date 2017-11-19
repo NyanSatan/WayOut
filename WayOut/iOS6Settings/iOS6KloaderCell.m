@@ -10,12 +10,13 @@
 
 @implementation iOS6KloaderCell
 
-- (instancetype)initForPosition:(iOS6TableViewCellPosition)position withTableViewWidth:(CGFloat)width {
+- (instancetype)initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition {
     
-    self = [super initForPosition:position withTableViewWidth:width];
+    self = [super initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition];
     
     [self.detailTextLabel removeFromSuperview];
-    
+    [self.textLabel setText:@"multi_kloader"];
+
     CGFloat xPosition = self.realCellXPosition + self.cellWidth - 88;
     
     iOS6Switch *kloaderSwitch = [[iOS6Switch alloc] initWithPosition:CGPointMake(xPosition, 9) withState:[ImageValidation isMultiKloaderNeeded]];

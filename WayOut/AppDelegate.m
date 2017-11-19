@@ -23,7 +23,7 @@
     char model[16];
     size_t size = sizeof(model);
     sysctlbyname("hw.machine", model, &size, NULL, 0);
-
+    
     if ([supportedPlatforms containsObject:[NSString stringWithCString:model encoding:NSASCIIStringEncoding]]) {
         
         int iOSVersion = [[[UIDevice currentDevice] systemVersion] intValue];

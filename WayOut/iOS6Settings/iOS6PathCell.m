@@ -11,15 +11,20 @@
 @implementation iOS6PathCell {
     
     NSInteger sectionNumber;
-    NSString *image;
+    NSString *key;
 }
 
-- (instancetype)initForPosition:(iOS6TableViewCellPosition)position withTableViewWidth:(CGFloat)width forSection:(NSInteger)section {
+- (instancetype)initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition forSection:(NSInteger)section {
     
-    self = [super initForPosition:position withTableViewWidth:width];
+    self = [super initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition];
+    
+    [self.textLabel setText:@"Path"];
     
     sectionNumber = section;
-    image = [NSString stringWithFormat:@"Image %ld", (long)sectionNumber];
+    key = [NSString stringWithFormat:@"Image %ld", (long)sectionNumber];
+    if (sectionNumber == 3) {
+        key = @"Pre-boot script";
+    }
     
     CGFloat xPosition;
     CGFloat fieldWidth;
@@ -37,7 +42,7 @@
     field.textColor = [self.detailTextLabel textColor];
     field.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
     field.textAlignment = NSTextAlignmentRight;
-    field.text = [[NSUserDefaults standardUserDefaults] objectForKey:image];
+    field.text = [[NSUserDefaults standardUserDefaults] objectForKey:key];
     field.placeholder = @"Path";
     field.keyboardType = UIKeyboardTypeASCIICapable;
     field.keyboardAppearance = UIKeyboardAppearanceDark;
@@ -63,7 +68,7 @@
 
 - (void)textChanged:(UITextField*)sender {
     
-    [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:image];
+    [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:key];
 }
 
 @end

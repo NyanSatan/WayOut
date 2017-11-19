@@ -12,7 +12,7 @@
 #import "PathTableViewCell.h"
 #import "DetailTableViewCell.h"
 #import "ImageValidation.h"
-#import <iOS6TableViewCell.h>
+#import "SettingsTableViewSingleton.h"
 
 @interface iPadSettingsViewForiOS6 : UIView <UITableViewDelegate, UITableViewDataSource, KloaderTableViewCellDelegate>
 

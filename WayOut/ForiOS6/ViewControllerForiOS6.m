@@ -179,18 +179,44 @@
                             
                             if ([ImageValidation isIMG3ImageValidAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]]) {
                                 
-                                [loading setAlertContent:1];
-                                
-                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                if ([ImageValidation isImageExistAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Pre-boot script"]]) {
                                     
-                                    [self.view removeFromSuperview];
-                                    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                                    [loading setAlertContent:4];
                                     
-                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                         
-                                        [ImageValidation bootX];
+                                        [ImageValidation executeScript];
+                                        
+                                        [loading setAlertContent:1];
+                                        
+                                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                            
+                                            [self.view removeFromSuperview];
+                                            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                                            
+                                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                                
+                                                [ImageValidation bootX];
+                                            });
+                                        });
                                     });
-                                });
+                                    
+                                } else {
+                                    
+                                    [loading setAlertContent:1];
+                                    
+                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                        
+                                        [self.view removeFromSuperview];
+                                        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                                        
+                                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                            
+                                            [ImageValidation bootX];
+                                        });
+                                    });
+                                    
+                                }
                                 
                             } else {
 
@@ -235,19 +261,44 @@
                     
                     if ([ImageValidation isARMImageValidAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]]) {
                         
-                        [loading setAlertContent:0];
-                        
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        if ([ImageValidation isImageExistAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Pre-boot script"]]) {
                             
-                            [self.view removeFromSuperview];
-                            [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                            [loading setAlertContent:4];
                             
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                 
-                                [ImageValidation bootX];
+                                [ImageValidation executeScript];
+                                
+                                [loading setAlertContent:0];
+                                
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    
+                                    [self.view removeFromSuperview];
+                                    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                                    
+                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                        
+                                        [ImageValidation bootX];
+                                    });
+                                });
                             });
-                        });
-                        
+                            
+                        } else {
+                            
+                            [loading setAlertContent:0];
+                            
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                
+                                [self.view removeFromSuperview];
+                                [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+                                
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    
+                                    [ImageValidation bootX];
+                                });
+                            });
+                            
+                        }
                     } else {
                         
                         UIAlertView *invalidImageAlert = [[UIAlertView alloc] initWithTitle:@"This doesn't seem like an ARM image" message:@"Image must be decrypted and unpacked\nCheck your settings and retry" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Settings", nil];

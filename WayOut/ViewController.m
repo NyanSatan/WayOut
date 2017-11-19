@@ -172,7 +172,7 @@
                 
             [loading setAlertContent:3];
                 
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
             if ([ImageValidation isImageExistAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]]) {
                     
@@ -181,18 +181,43 @@
                     if ([ImageValidation isARMImageValidAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]]) {
                             
                         if ([ImageValidation isIMG3ImageValidAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 2"]]) {
+                            
+                            if ([ImageValidation isImageExistAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Pre-boot script"]]) {
                                 
-                            [loading setAlertContent:1];
-
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [loading setAlertContent:4];
                                 
-                                [self.view removeFromSuperview];
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                 
-                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    [ImageValidation executeScript];
+                                
+                                    [loading setAlertContent:1];
+                                
+                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                                     
-                                    [ImageValidation bootX];
-                                 });
-                            });
+                                        [self.view removeFromSuperview];
+                                    
+                                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                        
+                                            [ImageValidation bootX];
+                                        });
+                                    });
+                                });
+                                
+                            } else {
+                            
+                                [loading setAlertContent:1];
+                            
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                
+                                    [self.view removeFromSuperview];
+                                
+                                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    
+                                        [ImageValidation bootX];
+                                    });
+                                });
+                            
+                            }
                                 
                         } else {
                                 
@@ -232,20 +257,45 @@
                     
                 if ([ImageValidation isARMImageValidAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Image 1"]]) {
                         
-                    [loading setAlertContent:0];
+                    if ([ImageValidation isImageExistAtPath:[[NSUserDefaults standardUserDefaults] valueForKey:@"Pre-boot script"]]) {
                         
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [loading setAlertContent:4];
                         
-                        [self.view removeFromSuperview];
-                        
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                             
-                            [ImageValidation bootX];
+                            [ImageValidation executeScript];
+                            
+                            [loading setAlertContent:0];
+                            
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                
+                                [self.view removeFromSuperview];
+                                
+                                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                    
+                                    [ImageValidation bootX];
+                                });
+                            });
                         });
-                    });
                         
+                    } else {
+                        
+                        [loading setAlertContent:0];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            
+                            [self.view removeFromSuperview];
+                            
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                
+                                [ImageValidation bootX];
+                            });
+                        });
+                        
+                    }
+                    
                 } else {
-                        
+                    
                     iOS6AlertView *invalidImageAlert = [[iOS6AlertView alloc] initWithTitle:@"This doesn't seem like an ARM image" message:@"Image must be decrypted and unpacked\nCheck your settings and retry" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitle:@"Settings" backgroundImage:alertImage dimmingImage:dimmingImage position:CGPointZero animated:YES];
                     [invalidImageAlert show];
                     [loading dismiss];

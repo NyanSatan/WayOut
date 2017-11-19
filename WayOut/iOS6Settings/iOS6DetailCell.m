@@ -15,9 +15,9 @@
     iOS6DetailCellType cellType;
 }
 
-- (instancetype)initForPosition:(iOS6TableViewCellPosition)position withTableViewWidth:(CGFloat)width withType:(iOS6DetailCellType)type forSection:(NSInteger)section {
+- (instancetype)initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition withType:(iOS6DetailCellType)type forSection:(NSInteger)section {
     
-    self = [super initForPosition:position withTableViewWidth:width];
+    self = [super initWithPosition:(iOS6TableViewCellPosition)position width:(CGFloat)width cellWidth:(CGFloat)cellWidth xPosition:(CGFloat)realCellXPosition];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pathChanged) name:NSUserDefaultsDidChangeNotification object:nil];
     
@@ -46,7 +46,13 @@
     
     switch (cellType) {
         case iOS6DetailCellTypeType:
-            self.detailTextLabel.text = [ImageValidation getiBootInfoForImage:sectionNumber ofType:iBootType];
+            
+            if (sectionNumber != 3) {
+                self.detailTextLabel.text = [ImageValidation getiBootInfoForImage:sectionNumber ofType:iBootType];
+            } else {
+                self.detailTextLabel.text = [ImageValidation getScriptType];
+            }
+            
             break;
             
         case iOS6DetailCellTypeVersion:

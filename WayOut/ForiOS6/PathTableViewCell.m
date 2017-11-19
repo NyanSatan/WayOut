@@ -11,7 +11,7 @@
 @implementation PathTableViewCell {
     
     NSInteger sectionNumber;
-    NSString *image;
+    NSString *key;
 }
 
 - (instancetype)initForSection:(NSInteger)section {
@@ -29,9 +29,15 @@
         xPosition = 89;
     }
     
+    [self.textLabel setText:@"Path"];
+    
     sectionNumber = section;
     
-    image = [NSString stringWithFormat:@"Image %ld", (long)sectionNumber];
+    if (sectionNumber == 3) {
+        key = @"Pre-boot script";
+    } else {
+        key = [NSString stringWithFormat:@"Image %ld", (long)sectionNumber];
+    }
     
     [self setSelected:NO];
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -40,7 +46,7 @@
     field.textColor = [self.detailTextLabel textColor];
     field.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
     field.textAlignment = NSTextAlignmentRight;
-    field.text = [[NSUserDefaults standardUserDefaults] objectForKey:image];
+    field.text = [[NSUserDefaults standardUserDefaults] objectForKey:key];
     field.placeholder = @"Path";
     field.keyboardType = UIKeyboardTypeASCIICapable;
     field.keyboardAppearance = UIKeyboardAppearanceDark;
@@ -65,7 +71,7 @@
 
 - (void)textChanged:(UITextField*)sender {
     
-    [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:image];
+    [[NSUserDefaults standardUserDefaults] setObject:sender.text forKey:key];
 }
 
 

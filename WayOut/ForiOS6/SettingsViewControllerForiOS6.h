@@ -11,7 +11,7 @@
 #import "PathTableViewCell.h"
 #import "DetailTableViewCell.h"
 #import "ImageValidation.h"
-#import "iOS6TableViewCell.h"
+#import "SettingsTableViewSingleton.h"
 
 @interface SettingsViewControllerForiOS6 : UITableViewController <KloaderTableViewCellDelegate>
 

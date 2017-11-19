@@ -10,6 +10,8 @@
 
 @implementation iOS6iPadSettingsView {
     
+    CGSize screenSize;
+    
     UIView *darkLayer;
     UIView *superview;
     
@@ -17,15 +19,19 @@
     CGFloat shadowOffset;
     
     UITableView *table;
-    int sectionCount;
-    CellsInitialization *cells;
+    UIImage *scrollImage;
     
+    SettingsTableViewSingleton *cells;
 }
 
 
 - (instancetype)init {
     
     self = [super init];
+    
+    int iOSVersion = [[[UIDevice currentDevice] systemVersion] intValue];
+    
+    screenSize = [[UIScreen mainScreen] bounds].size;
     
     superview = [[[[[UIApplication sharedApplication] delegate] window] rootViewController] view];
     
@@ -39,16 +45,10 @@
     baseLayer.frame = CGRectMake(0, 0, linen.size.width, linen.size.height);
     baseLayer.backgroundColor = [UIColor clearColor].CGColor;
     baseLayer.contents = (id)linen.CGImage;
-    baseLayer.shadowColor = [UIColor blackColor].CGColor;
-    baseLayer.shadowRadius = 10;
-    baseLayer.shadowOpacity = 1;
-    baseLayer.shadowOffset = CGSizeMake(0, 0);
-    baseLayer.shouldRasterize = YES;
-    baseLayer.rasterizationScale = [[UIScreen mainScreen] scale];
     [self.layer addSublayer:baseLayer];
     
     darkLayer = [[UIView alloc] init];
-    [darkLayer setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.75]];
+    [darkLayer setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5]];
     [darkLayer setFrame:[[UIScreen mainScreen] bounds]];
     
     table = [[UITableView alloc] initWithFrame:CGRectMake(shadowOffset, shadowOffset, linen.size.width-shadowOffset*2, linen.size.height-shadowOffset*2) style:UITableViewStyleGrouped];
@@ -59,7 +59,10 @@
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     table.separatorColor = [[UIColor blackColor] colorWithAlphaComponent:0.25];
     table.contentInset = UIEdgeInsetsMake(49, 0, 0, 0);
+    table.scrollIndicatorInsets = UIEdgeInsetsMake(44, 0, 0, iOSVersion > 7 ? -2 : -1);
     [self addSubview:table];
+    
+    scrollImage = [[UIImage imageNamed:@"UIScrollerIndicatorDefault"] resizableImageWithCapInsets:UIEdgeInsetsMake(3, 0, 3, 0)];
 
     UIImage *navigationBarBackground = [UIImage imageNamed:@"UINavigationBarBlackTranslucentBackground"];
     UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(shadowOffset, shadowOffset, table.frame.size.width, navigationBarBackground.size.height)];
@@ -103,16 +106,9 @@
     navigationBar.items = @[navigationItem];
     
     [self addSubview:navigationBar];
+
     
-    
-    
-    if ([ImageValidation isMultiKloaderNeeded]) {
-        sectionCount = 3;
-    } else {
-        sectionCount = 2;
-    }
-    
-    cells = [[CellsInitialization alloc] initCellsWithTableViewWidth:table.frame.size.width delegate:self];
+    cells = [[SettingsTableViewSingleton alloc] initWithTableWidth:table.frame.size.width delegate:self];
     
     return self;
 }
@@ -123,7 +119,7 @@
     [superview addSubview:self];
     CGRect frame = self.frame;
     frame.origin.y = 152;
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{[self setFrame:frame];} completion:nil];
+    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{[self setFrame:frame];} completion:nil];
     
 }
 
@@ -133,126 +129,51 @@
     [darkLayer removeFromSuperview];
     CGRect frame = self.frame;
     frame.origin.y = normalYPosition;
-    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{[self setFrame:frame];} completion:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[self removeFromSuperview];});
+    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{[self setFrame:frame];} completion:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{[self removeFromSuperview];});
 }
-
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return sectionCount;
+    return cells.sectionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return 1;
-    } else {
-        return 3;
-    }
+    return [cells getRowCountForSection:section];
 }
 
 #pragma mark - Setting up header
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return nil;
-    }
-    else if (section == 1) {
-        
-        return cells.image1Header;
-        
-    } else {
-        
-        return cells.image2Header;
-        
-    }
+    return [cells getHeaderViewForSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    
-    if (section == 0) {
-        return cells.multi_kloaderHeaderHeight;
-    } else {
-        return cells.image1Header.frame.size.height;
-    }
-    
+    return [cells getHeaderHeightForSection:section];
 }
 
 #pragma mark - Setting up footer
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return cells.multi_kloaderFooter;
-    }
-    else {
-        return nil;
-    }
+    return [cells getFooterViewForSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     
-    if (section == 0) {
-        return cells.multi_kloaderFooter.frame.size.height;
-    } else {
-        
-        return cells.nullFooterHeight;
-    }
+    return [cells getFooterHeightForSection:section];
 }
 
 #pragma mark - Setting up cells
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    switch (indexPath.section) {
-        case 0:
-            return cells.multi_kloaderCell;
-            break;
-            
-        case 1:
-            
-            switch (indexPath.row) {
-                case 0:
-                    return cells.path1Cell;
-                    break;
-                    
-                case 1:
-                    return cells.type1Cell;
-                    break;
-                    
-                case 2:
-                    return cells.version1Cell;
-                    break;
-            }
-            
-        case 2:
-            
-            switch (indexPath.row) {
-                case 0:
-                    return cells.path2Cell;
-                    break;
-                    
-                case 1:
-                    return cells.type2Cell;
-                    break;
-                    
-                case 2:
-                    return cells.version2Cell;
-                    break;
-            }
-            
-            
-            break;
-            
-            break;
-    }
-    
-    return nil;
+    return [cells getCellForIndexPath:indexPath tableWidth:tableView.frame.size.width cellWidth:cells._cellWidth xPosition:cells._cellXPosition];
 }
 
 - (void)didSwitchValueChanged:(BOOL)value {
@@ -260,13 +181,13 @@
     [[NSUserDefaults standardUserDefaults] setBool:value forKey:@"multi_kloader"];
     
     if (value) {
-        if (sectionCount == 2) {
-            sectionCount += 1;
+        if (cells.sectionCount == 3) {
+            cells.sectionCount += 1;
             [table insertSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
         }
     } else {
-        if (sectionCount == 3) {
-            sectionCount += -1;
+        if (cells.sectionCount == 4) {
+            cells.sectionCount += -1;
             [table deleteSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
         }
     }
@@ -275,5 +196,16 @@
     
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    for (UIImageView *i in scrollView.subviews) {
+        
+        if (i.autoresizingMask == UIViewAutoresizingFlexibleLeftMargin) {
+            
+            [i setImage:scrollImage];
+        }
+    }
+    
+}
 
 @end
