@@ -32,8 +32,6 @@ typedef NS_ENUM(NSInteger, iBootInfoType) {
 + (BOOL)doesBelongToS5L8940Family;
 
 + (NSString*)getiBootInfoForImage:(NSInteger)imageNumber ofType:(iBootInfoType)infoType;
-+ (NSString*)getiBootTypeAtPath:(NSString*)path isIMG3:(BOOL)isIMG3;
-+ (NSString*)getiBootVersionAtPath:(NSString*)path isIMG3:(BOOL)isIMG3;
 + (NSString*)getScriptType;
 
 @end

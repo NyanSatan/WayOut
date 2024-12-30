@@ -17,7 +17,6 @@
     BOOL multi_kloader = [[[NSUserDefaults standardUserDefaults] objectForKey:@"multi_kloader"] boolValue];
     
     if (image1 != nil && image2 != nil && multi_kloader == YES | multi_kloader == NO) {
-        
         return  YES;
     } else {
         return NO;
@@ -48,6 +47,8 @@
         result = NO;
     }
 
+    [fd closeFile];
+    
     return result;
 }
 
@@ -61,12 +62,12 @@
     uint8_t ARMMagic[] = {0x0e, 0x00, 0x00, 0xea};
         
     if ([imageHeader isEqualToData:[NSData dataWithBytes:ARMMagic length:sizeof(ARMMagic)]]) {
-            
-        [fd closeFile];
         result = YES;
     } else {
         result = NO;
     }
+    
+    [fd closeFile];
     
     return result;
 }
@@ -80,12 +81,12 @@
     NSData *imageHeader = [fd readDataOfLength:4];
    
     if ([imageHeader isEqualToData:[NSData dataWithBytes:IMG3Magic length:sizeof(IMG3Magic)]]) {
-            
-        [fd closeFile];
         result = YES;
     } else {
         result = NO;
     }
+    
+    [fd closeFile];
     
     return result;
 }
@@ -148,11 +149,82 @@
         
         if (imageNumber == 1 ? [self isARMImageValidAtPath:image] : [self isIMG3ImageValidAtPath:image]) {
             
-            if (infoType == iBootType) {
-                return [self getiBootTypeAtPath:image isIMG3:(imageNumber-1)];
-            } else {
-                return [self getiBootVersionAtPath:image isIMG3:(imageNumber-1)];
+            int image_fd = open([image cStringUsingEncoding:NSASCIIStringEncoding], O_RDONLY);
+            if (image_fd < 0) {
+                close(image_fd);
+                return @"Couldn't open the image";
             }
+        
+            uint32_t magic = 0;
+            
+            if (pread(image_fd, &magic, 4, 0) < 0) {
+                close(image_fd);
+                return @"Couldn't read the image";
+            }
+            
+            
+            uint16_t offset = 0x300;
+            
+            if (magic == 0x496d6733) {
+                offset += 0x40;
+            }
+            
+            uint32_t iboot_str_ref;
+            
+            
+        read:
+            
+            if (pread(image_fd, &iboot_str_ref, 4, offset + ((infoType == iBootVersion) ? 0x8 : 0x0)) < 0) {
+                close(image_fd);
+                return @"Couldn't read the image";
+            }
+            
+            if (iboot_str_ref == 'diuu') {
+                offset += 0x20;
+                goto read;
+            }
+            
+            if (iboot_str_ref == 0x0) {
+                offset += 0x20;
+                goto read;
+            }
+            
+            
+            
+            iboot_str_ref = iboot_str_ref << 16 >> 16;
+            
+            if (iboot_str_ref > 0x2ff) {
+                return @"String is out of range";
+            }
+            
+            if (magic == 0x496d6733) {
+                iboot_str_ref += 0x40;
+            }
+            
+            
+            uint16_t max_length = (infoType == iBootType) ? 64 : 32;
+            
+            char *string = malloc(max_length);
+            *(string + max_length - 1) = 0x0;
+            
+            if (pread(image_fd, string, max_length, iboot_str_ref) < 0) {
+                close(image_fd);
+                return @"Couldn't read the image";
+            }
+            
+            if (infoType == iBootType) {
+                char *first_comma = strstr(string, ",");
+                
+                if (first_comma) {
+                    *first_comma = 0x0;
+                }
+                
+            }
+            
+            close(image_fd);
+            
+            return [NSString stringWithCString:string encoding:NSASCIIStringEncoding];
+            
             
         } else {
             return @"Image not valid";
@@ -163,51 +235,6 @@
     }
     
     return nil;
-}
-
-#define TYPELENGTH 0x40
-#define VERSIONLENGTH 0x20
-#define OFFSET 0x200
-#define IMG3OFFSET 0x240
-#define TYPEOFFSET 0x0
-#define VERSIONOFFSET 0x80
-
-+ (NSString*)getiBootTypeAtPath:(NSString*)path isIMG3:(BOOL)isIMG3 {
-    
-    int fd = open([path cStringUsingEncoding:NSASCIIStringEncoding], O_RDONLY, 0);
-    char buffer[TYPELENGTH];
-    
-    if (!isIMG3) {
-        pread(fd, buffer, TYPELENGTH, OFFSET+TYPEOFFSET);
-    } else {
-        pread(fd, buffer, TYPELENGTH, IMG3OFFSET+TYPEOFFSET);
-    }
-    
-    NSString *type = [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
-    NSRange range = [type rangeOfString:@","];
-    NSString *result = [type substringWithRange:NSMakeRange(0, range.location)];
-    
-    close(fd);
-    
-    return result;
-}
-
-+ (NSString*)getiBootVersionAtPath:(NSString*)path isIMG3:(BOOL)isIMG3 {
-    
-    int fd = open([path cStringUsingEncoding:NSASCIIStringEncoding], O_RDONLY, 0);
-    char buffer[VERSIONLENGTH];
-    
-    if (!isIMG3) {
-        pread(fd, buffer, VERSIONLENGTH, OFFSET+VERSIONOFFSET);
-    } else {
-        pread(fd, buffer, VERSIONLENGTH, IMG3OFFSET+VERSIONOFFSET);
-    }
-    
-    NSString *result = [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
-    
-    close(fd);
-    
-    return result;
 }
 
 + (NSString*)getScriptType {
