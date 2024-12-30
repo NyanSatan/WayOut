@@ -62,7 +62,7 @@
     
     _tableWidth = tableWidth;
     
-    scriptWarning = @"Script will be executed between image validation and image executuion\nScript won't be validated";
+    scriptWarning = @"Script will be executed between image validation and image execution\nScript won't be validated";
     
     if (iOSVersion == 5) {
         kloaderWarning = @"multi_kloader isn't supported on iOS 5";
